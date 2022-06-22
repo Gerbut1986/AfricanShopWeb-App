@@ -1,0 +1,59 @@
+﻿
+@{
+    var Products = ViewBag.Products;
+
+    <div class="row" style="padding:9px;background-image:src(../../Logo/paper.gif);border:4px solid">
+        <div style="background-color:whitesmoke;padding:9px;color:mediumvioletred;font-weight:bold">
+            <span style="font-family:'Palatino Linotype';font-size:large">CATEGORIES / @ViewBag.CategoryName </span>
+        </div>
+        @foreach (var product in Products)
+        {<!--~/Images/Products/Fair and White Gold Rejuvenating Moisture Lotion Number 3 3 500ml.jpeg-->
+            string path = $"~/Images/Products/{product.Photo}";
+            <div class="col-md-3" style="margin-top:20px">
+                <div class="card p-3">
+                    <div class="text-center">
+                        <img src="@Url.Content(path)" width="100%" height="200" alt="Img Not Opened" />
+                    </div>
+                    <div class="product-details" style="min-height:auto">
+                        <span style="color:mediumblue;font-family:'Palatino Linotype';font-weight:bold" class="font-weight-bold d-block">@product.Price грн</span>
+                        <div style="word-break: break-all;min-height:80px">@product.Name</div>
+                        <div class="buttons d-flex flex-row">
+                            <div class="cart"><i class="fa fa-shopping-cart"></i></div>
+                            <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Add to cart </button>
+                        </div>
+                        <div class="weight">
+                            @if (product.IsStock == true)
+                            {
+                                <small style="color:green;font-weight:bold">Is Stock</small>
+                            }
+                            else
+                            {
+                                <small style="color: red; font-weight: bold">Isn't Stock</small>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    @*Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
+
+        @Html.PagedListPager(ViewBag.Products, page => Url.Action("MainPage", new { page }))*@
+}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        const cartButtons = document.querySelectorAll('.cart-button');
+        cartButtons.forEach(button => {
+            button.addEventListener('click', cartClick);
+        });
+        function cartClick() {
+            let button = this;
+            button.classList.add('clicked');
+        }
+    });
+</script>
+
+
+<style>
+</style>

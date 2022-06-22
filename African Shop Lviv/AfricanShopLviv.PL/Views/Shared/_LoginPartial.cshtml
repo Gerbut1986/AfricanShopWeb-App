@@ -1,0 +1,84 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "nav-item nav-link" }))
+    {
+        @Html.AntiForgeryToken()
+
+        var currUser = User.Identity;
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("Welcome " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", id = "wlcm" })
+            </li>
+            <li><a id="logout" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        </ul>
+        @*<ul class="nav navbar-nav navbar-right">
+            <li>
+                <a id="card" href="~/Home/Cart">
+                    <img style="margin-left:10px" src="~/Logo/cart.png" width="40" height="40" /><span style="border-radius:34px;padding:4px;
+background-color:yellow">1</span>
+                </a>
+            </li>
+        </ul>*@
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-item nav-link" })</li>
+    </ul>
+    @*<ul class="nav navbar-nav navbar-right">
+        <li>
+            <a id="card" href="~/Home/Cart">
+                <img style="margin-left:10px" src="~/Logo/cart.png" width="40" height="40" /><span style="border-radius:34px;padding:4px;
+background-color:yellow">1</span>
+            </a>
+        </li>
+    </ul>*@
+}
+
+<style>
+    #card {
+        text-decoration: none;
+    }
+
+        #card:hover {
+            background-image: src(~/Logo/cart.png);
+        }
+
+    #loginLink {
+        background-color: green;
+        color: white;
+        border-radius: 9px;
+        font-family: 'Times New Roman';
+    }
+
+        #loginLink:hover {
+            background-color: antiquewhite;
+            color: green;
+        }
+
+    #wlcm {
+        color: darkorange;
+        margin-right: 22px;
+    }
+
+    #logout {
+        border: 1px solid red;
+        background-color: red;
+        color: white;
+        padding: 5px;
+        border-radius: 15px;
+        font-family: 'Palatino Linotype';
+    }
+
+        #logout:hover {
+            background-color: white;
+            color: red;
+        }
+
+        #logout:active {
+            background-color: black;
+            color: white;
+        }
+</style>

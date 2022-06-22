@@ -1,0 +1,256 @@
+﻿@{
+    List<string> videos = ViewBag.Videos;
+
+
+    <div class="row" style="padding:9px">
+        <div style="background-color:whitesmoke;padding:9px;color:mediumvioletred;font-weight:bold">
+            <span style="font-family:'Palatino Linotype';font-size:large">Videos</span>
+        </div>
+        @foreach (var video in videos)
+        {
+        <div class="col-3" style="margin-top:9px">
+            <video class="movie-btn widscreen-btn" width="100%" vidUrl="~/Videos/@video">
+            </video>
+        </div>
+        }
+    </div>
+}
+
+<div class="modal-vid">
+    <div class="movie-box">
+        <div class="wide-screen">
+            <div class="vid-holder">
+                <div class="close" vidUrl="#">Close</div>
+                <img class="widescreen-img" src="https://s3.amazonaws.com/imglibs/bg_widescreen.gif" />
+                <img class="standard-img" src="https://s3.amazonaws.com/imglibs/standard_bg.gif" />
+                <img class="sixteen-nine" src="https://s3.amazonaws.com/imglibs/16x9_bg.png" />
+                <img class="pal" src="https://s3.amazonaws.com/imglibs/pal.png" />
+
+                <video id="myVideo" class="myVideo hide" src="" controls></video>
+                <iframe class="youTube hide" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /*body {
+        font-family: 'Lato', sans-serif;
+        background-color: #232323;
+        color: #ccc;
+        font-weight: 300;
+    }*/
+
+    h1, h2 {
+        margin: 0 0 10px 0;
+        padding: 0;
+        font-weight: 300;
+    }
+
+    a {
+        color: #999;
+    }
+
+    .main-copy {
+        top: 0px;
+        left: 0px;
+        display: table;
+        width: 100%;
+        height: 100vh;
+        color: #fff;
+        text-align: center;
+    }
+
+
+    .copy-box {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: left;
+    }
+
+    .copy {
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        width: calc(100vw - 40px);
+        max-width: calc(800px - 40px);
+        padding: 0 20px 0 20px;
+        font-weight: 300;
+        color: #999;
+        line-height: 1.25em;
+    }
+
+    .summary {
+        margin: 0 0 20px 0;
+    }
+
+    .movie-btn, .tube-link {
+        border-style: solid;
+        border-width: 1px;
+        border-color: #333;
+        background-color: #000;
+        margin: 0 0 10px 0;
+        padding: 10px;
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        cursor: pointer;
+        width: calc(100% - 20px);
+    }
+
+    .modal-vid {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100vh;
+        z-index: 999;
+        display: none;
+    }
+
+    .movie-box {
+        top: 0px;
+        left: 0px;
+        display: table;
+        width: 100%;
+        height: 100vh;
+        background-color: #232323;
+        background-color: rgba(0, 0, 0, 0.80);
+        color: #fff;
+        text-align: center;
+    }
+
+    .close {
+        position: absolute;
+        font-weight: 300;
+        letter-spacing: 0.125em;
+        text-transform: uppercase;
+        font-size: 10px;
+        right: 0px;
+        top: -30px;
+        color: #999;
+        cursor: pointer;
+    }
+
+    .wide-screen {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .vid-holder {
+        display: inline-block;
+        top: 0px;
+        left: 0px;
+        position: relative;
+        margin: 0 auto;
+        -webkit-box-shadow: 0 0 10px 0 #000000;
+        box-shadow: 0 0 10px 0 #000000;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #333;
+    }
+
+
+    .standard-img, .widescreen-img, .sixteen-nine, .pal {
+        max-height: calc(100vh - 122px);
+        max-width: calc(100vw - 122px);
+        position: relative;
+        margin: 0 auto;
+        /*transition: all 0.5s;*/
+        display: none;
+    }
+
+
+
+    .show {
+        display: block;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .vid-holder video, .vid-holder iframe {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        background-image: url(https://s3.amazonaws.com/imglibs/video_bg.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $(".movie-btn").click(function () {
+            $('.myVideo').attr("src", $(this).attr("vidUrl"));
+            document.getElementById('myVideo').play();
+            $('.myVideo').removeClass("hide");
+            $('.myVideo').addClass("show");
+            $('.youTube').addClass("hide");
+            $('.youTube').removeClass("show");
+        });
+
+        $(".tube-link").click(function () {
+            $('.youTube').removeClass("hide");
+            $('.youTube').addClass("show");
+            $('.myVideo').addClass("hide");
+            $('.myVideo').removeClass("show");
+            $('.youTube').attr("src", $(this).attr("vidUrl"));
+        });
+
+        $(".widscreen-btn").click(function () {
+            $(".modal-vid").fadeIn(500);
+            $(".vid-holder img").removeClass("show");
+            $(".widescreen-img").addClass("show");
+        });
+
+        $(".standard-btn").click(function () {
+            $(".modal-vid").fadeIn(500);
+            $(".vid-holder img").removeClass("show");
+            $(".standard-img").addClass("show");
+        });
+
+        $(".sixteen-nine-btn").click(function () {
+            $(".modal-vid").fadeIn(500);
+            $(".vid-holder img").removeClass("show");
+            $(".sixteen-nine").addClass("show");
+        });
+
+        $(".pal-btn").click(function () {
+            $(".modal-vid").fadeIn(500);
+            $(".vid-holder img").removeClass("show");
+            $(".pal").addClass("show");
+        });
+
+
+        $(".close").click(function () {
+            $(".modal-vid").fadeOut(500);
+            /*document.getElementById('myVideo').pause();*/
+            $('.youTube, .myVideo').attr('src', '');
+        });
+
+    });
+
+
+
+    window.document.onkeydown = function (e) {
+        if (!e) e = event;
+        if (e.keyCode == 27) {
+
+            $('.youTube, .myVideo').attr('src', '');
+            $('.modal-vid').fadeOut(500);
+            document.getElementById('myVideo').pause();
+
+        }
+
+
+    };
+</script>
