@@ -1,0 +1,140 @@
+﻿@{
+    List<AfricanShopLviv.BLL.DTO.CartDto> list = ViewBag.Cart;
+
+
+
+    <div style="opacity:0.97;display:block" id="cart" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom w3-card-4">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('cart').style.display='none'"
+                      class="w3-button w3-display-topright">&times;</span>
+                <h2 style="text-align:center;font-family:'Palatino Linotype'">*** Your Shopping Cart ***</h2>
+            </header>
+            <div class="w3-container">
+                @if (ViewBag.IsEmptyCart == true)
+                {
+                    <h3 style="color:red;font-family:'Palatino Linotype';text-align:center;padding:75px">
+                        Your Cart is Empty... Try to add some products!
+                    </h3>
+                }
+                else
+                {
+                    <form action="~/Home/SendMessage" method="post" style="padding-top: 2px; padding-bottom: 2px ">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <table class="table table-image">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col">Product</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Qty</th>
+                                            <th scope="col">Total</th>
+                                            <th scope="col">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    @foreach (var item in list)
+                                    {                                        
+                                        string photo = $"~/Images/Products/{item.ProductPhoto}";
+                                        <tbody>
+                                            <tr>
+                                                <td class="w-25">
+                                                    <img src="@Url.Content(photo)" width="20%" height="20%" onclick="document.getElementById('photo').style.display='block'"
+                                                         class="img-fluid img-thumbnail" alt="Sheep">
+                                                </td>
+                                                <td>@item.ProductName </td>
+                                                <td>@item.Price грн</td>
+                                                <td class="qty">@item.Quantity</td>
+                                                <td>@item.ItemsPrice грн</td>
+                                                <td>
+                                                    @Html.ActionLink("X", "DeleteItem", "Home", new { cartSelected = item.ProductName }, new { @class = "btn btn-danger btn - sm" })
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    }
+                                </table>
+                                <div class="d-flex justify-content-end">
+                                    <h5>Total: <span class="price text-success">
+                                        @AfricanShopLviv.PL.Controllers.HomeController.TotalSum грн.
+                                         </span></h5>
+                                </div>
+                            </div>
+                            <div class="modal-footer border-top-0 d-flex justify-content-between">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="document.getElementById('cart').style.display='none'">
+                                    Close
+                                </button>
+                                @if (ViewBag.RegistredUser == null)
+                                {
+                                    <span onclick="document.getElementById('id01').style.display='block'"
+                                          class="btn btn-success">Checkout</span>
+                                }
+                                else
+                                {
+                                    <button type="submit" name="btn-registred" class="btn btn-success">Checkout</button>
+                                }
+                            </div>
+                        </div>
+                    </form>
+                }
+            </div>
+            <footer style="text-align:center" class="w3-container w3-teal">
+                <h5 style="font-family:'Palatino Linotype';font-weight:bold">MAOTS ent Best Buy Online</h5>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Info 'bout the client: -->
+    <div class="w3-container">
+        <div style="opacity:0.97" id="id01" class="w3-modal">
+            <div class="w3-modal-content w3-animate-zoom w3-card-4">
+                <header class="w3-container w3-teal">
+                    <span onclick="document.getElementById('id01').style.display='none'"
+                          class="w3-button w3-display-topright">&times;</span>
+                    <h2 style="text-align:center;font-family:'Palatino Linotype'"> Fill In Your Data Or Register </h2>
+                </header>
+                <div class="w3-container">
+                    <form action="~/Home/SendMessage" method="post" style="padding:50px">
+                        <input name="message" style="margin-bottom:5px" type="text" value="MakeOrder" class="form-control" hidden />
+                        <input name="userName" style="margin-bottom:5px" type="text" class="form-control" placeholder="Your Name:" required />
+                        <input name="email" style="margin-bottom:5px" type="email" class="form-control" placeholder="Your Email:" required />
+                        <input name="phone" style="margin-bottom:5px" type="tel" class="form-control" placeholder="Your Phone:" required />
+                        <div class="form-outline">
+                            <textarea name="comment" placeholder="Comments" class="form-control" rows="4" required></textarea>
+                        </div>
+                        <br />
+                        <div style="width:90px;margin:auto">
+                            <input class="btn btn-primary" type="submit" value="Send" />
+                        </div>
+                    </form>
+                </div>
+                <footer style="text-align:center" class="w3-container w3-teal">
+                    <h5 style="font-family:'Palatino Linotype';font-weight:bold">MAOTS ent Best Buy Online</h5>
+                </footer>
+            </div>
+        </div>
+        <script>
+            var isOrder = doc.getElementById("message");
+            var phone = document.getElementById("phone");
+            var userName = document.getElementById("userName");
+            var email = document.getElementById("email");
+            var comment = document.getElementById("comment");
+            var mailInfo = { isOrder: message, mail: email, name: userName, phn: phone, commt: comment };
+            $.ajax({
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                type: 'POST',
+                url: '/Home/SendMessage',
+                data: mailInfo,
+                success: function (result) {
+                    alert(result);
+                },
+                error: function (err) {
+                    alert(err.statusText);
+                });
+});
+        </script>
+    </div>
+}
+
+
+

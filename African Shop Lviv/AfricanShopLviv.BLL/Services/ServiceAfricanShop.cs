@@ -32,7 +32,9 @@
                     OrderDate = dto.OrderDate,
                     Price = dto.Price,
                     Quantity = dto.Quantity,
-                    UserId = dto.UserId
+                    UserId = dto.UserId,
+                    ProductName = dto.ProductName,
+                    ProductPhoto = dto.ProductPhoto
                 };
                 Db.Carts.Create(model);
             }
@@ -52,6 +54,8 @@
                 listDTO[i].Price = list[i].Price;
                 listDTO[i].Quantity = list[i].Quantity;
                 listDTO[i].UserId = list[i].UserId;
+                listDTO[i].ProductName = list[i].ProductName;
+                listDTO[i].ProductPhoto = list[i].ProductPhoto;
             }
             return listDTO;
         }
@@ -70,6 +74,8 @@
                 listDTO[i].Price = list[i].Price;
                 listDTO[i].Quantity = list[i].Quantity;
                 listDTO[i].UserId = list[i].UserId;
+                listDTO[i].ProductName = list[i].ProductName; 
+                listDTO[i].ProductPhoto = list[i].ProductPhoto;
             }
             return listDTO;
         }
@@ -84,7 +90,9 @@
                     OrderDate = dto.OrderDate,
                     Price = dto.Price,
                     Quantity = dto.Quantity,
-                    UserId = dto.UserId
+                    UserId = dto.UserId,
+                    ProductName = dto.ProductName,
+                    ProductPhoto = dto.ProductPhoto
                 };
                 Db.Carts.Update(model);
             }

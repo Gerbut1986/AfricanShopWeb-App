@@ -1,0 +1,71 @@
+﻿@model PagedList.IPagedList<AfricanShopLviv.BLL.DTO.ProductDto>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Product Pagination Test"; Layout = "~/Views/Shared/MainLayout.cshtml";
+}
+<h1 style="color:blue;text-align:center;font-family:'Palatino Linotype'">
+    Product Pagination Test
+</h1>
+
+<table class="table">
+    @foreach (var product in Model)
+    {<!--~/Images/Products/Fair and White Gold Rejuvenating Moisture Lotion Number 3 3 500ml.jpeg-->
+        string path = $"~/Images/Products/{product.Photo}";
+        <div class="col-md-3" style="margin-top:20px;display:inline-block">
+            <div class="card p-3" style="display: inline-block">
+                <div class="text-center">
+                    <img src="@Url.Content(path)" width="100%" height="200" alt="Img Not Opened" />
+                </div>
+                <div class="product-details" style="min-height:auto">
+                    <span style="color:mediumblue;font-family:'Palatino Linotype';font-weight:bold" class="font-weight-bold d-block">@product.Price грн</span>
+                    <div style="word-break: break-all;min-height:80px">@product.Name</div>
+                    <div class="buttons d-flex flex-row">
+                        <div class="cart"><i class="fa fa-shopping-cart"></i></div>
+                        <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Add to cart </button>
+                    </div>
+                    <div class="weight">
+                        @if (product.IsStock == true)
+                        {
+                            <small style="color:green;font-weight:bold">Is Stock</small>
+                        }
+                        else
+                        {
+                            <small style="color: red; font-weight: bold">Isn't Stock</small>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</table>
+<br />
+<div>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) from @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("ProdPaginationTest", new { page }))
+</div>
+
+
+
+
+<!-- ajax calling to get form: -->
+
+<script type="text/javascript">
+                       $("#search").keyup(function (e) {
+                       var searchString = $(this).val();
+                       if (e.which == 13) {
+                       $.ajax({
+                       type: "GET",
+                       url: '@Url.Action("_3be122bf_a593_4a98_8154_fff1f605738f", "admin")',
+                       data: {
+                       search: searchString
+            },
+            success: function () {
+                // do something here, like replace the html
+            }
+        });
+    }
+});
+</script>

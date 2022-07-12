@@ -5,12 +5,11 @@
     {
         @Html.AntiForgeryToken()
 
-        var currUser = User.Identity;
         <ul class="nav navbar-nav navbar-right">
             <li>
                 @Html.ActionLink("Welcome " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", id = "wlcm" })
             </li>
-            <li><a id="logout" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+            <li><a id="logout" class="btn btn-danger" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
         </ul>
         @*<ul class="nav navbar-nav navbar-right">
             <li>
@@ -47,32 +46,43 @@ background-color:yellow">1</span>
         }
 
     #loginLink {
-        background-color: green;
+        background-color: blueviolet;
         color: white;
         border-radius: 9px;
         font-family: 'Times New Roman';
     }
 
         #loginLink:hover {
-            background-color: antiquewhite;
+            background-color: blue;
             color: green;
+        }
+        #loginLink:active {
+            background-color: cornflowerblue;
+            color: wheat;
         }
 
     #wlcm {
-        color: darkorange;
+        border-color: transparent;
         margin-right: 22px;
+        font-weight: bold;
+        font-family: 'Palatino Linotype';
+        color: aqua;
     }
+        #wlcm:hover{
+            color:dodgerblue;
+        }
 
-    #logout {
-        border: 1px solid red;
+        #logout {
+            /*  border: 1px solid red;
         background-color: red;
         color: white;
-        padding: 5px;
-        border-radius: 15px;
-        font-family: 'Palatino Linotype';
-    }
+        padding:5px;
+        border-radius: 22px;*/
+            font-family: 'Palatino Linotype';
+        }
 
         #logout:hover {
+            border: 1px solid white;
             background-color: white;
             color: red;
         }

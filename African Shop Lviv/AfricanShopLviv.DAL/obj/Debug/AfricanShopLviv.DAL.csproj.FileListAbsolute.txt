@@ -10,3 +10,15 @@ C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\African 
 C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\African Shop Lviv\AfricanShopLviv.DAL\obj\Debug\AfricanShopLviv.DAL.csproj.CopyComplete
 C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\African Shop Lviv\AfricanShopLviv.DAL\obj\Debug\AfricanShopLviv.DAL.dll
 C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\African Shop Lviv\AfricanShopLviv.DAL\obj\Debug\AfricanShopLviv.DAL.pdb
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.DAL\bin\Debug\AfricanShopLviv.DAL.dll.config
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.DAL\bin\Debug\AfricanShopLviv.DAL.dll
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.DAL\bin\Debug\AfricanShopLviv.DAL.pdb
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.DAL\obj\Debug\AfricanShopLviv.DAL.csproj.AssemblyReference.cache
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.DAL\obj\Debug\AfricanShopLviv.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.DAL\obj\Debug\AfricanShopLviv.DAL.csproj.CopyComplete
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.DAL\obj\Debug\AfricanShopLviv.DAL.dll
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.DAL\obj\Debug\AfricanShopLviv.DAL.pdb

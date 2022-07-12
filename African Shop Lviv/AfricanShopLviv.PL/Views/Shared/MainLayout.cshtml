@@ -11,48 +11,147 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <link href="~/Content/prodList.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
 
     <link href="~/Content/css/styles.css" rel="stylesheet" />
     @*@Styles.Render("~/Content/css")*@
     @*@Scripts.Render("~/bundles/modernizr")*@
 </head>
-<body style="background-image:src(../../Images/img/44993423.l2dttf3uz1.jpg)">
-
-    <div class="col-md-pull-2">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:transparent">
-            <div class="container-fluid" style="background-color:white">
-                @Html.ActionLink("Homepage", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", id="hompg" })
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav">
-                        &nbsp;                        &nbsp;                        &nbsp;                        &nbsp;                        &nbsp;                &nbsp;
-                        @Html.ActionLink("Contacts", "MainPage", "Home", new { param = "Contacts" }, new { id = "btn", @class = "nav-item nav-link" })
-                        @Html.ActionLink("Delivery", "MainPage", "Home", new { param = "Delivery" }, new { id="btn", @class = "nav-item nav-link" })
-                        @Html.ActionLink("Payments", "MainPage", "Home", new { param = "Payments" }, new { id = "btn", @class = "nav-item nav-link" })
-                        @Html.ActionLink("Videos", "MainPage", "Home", new { param = "Videos" }, new { id = "btn", @class = "nav-item nav-link" })
-                    </div>
-                    <div class="navbar-nav ms-auto">
-                        @Html.Partial("_LoginPartial")
+<body>
+    <div class="col-md-pull-2" @*style="background-image: linear-gradient(transparent, yellow, red, transparent)"*@>
+        <header>
+            @if (ViewBag.IsOrder == true)
+            {
+                <div id="cartFixed" class="">
+                    <a href="~/Home/MainPage?isShopCart=cart" style="">
+                        <img src="~/Logo/cart.png" width="60" height="60" />
+                    </a>
+                </div>
+            }
+            else { }
+            <nav class="navbar navbar-expand-lg navbar-light bg-inverse-info" style="background-image: linear-gradient(transparent, yellow, black, yellow); border: 2px solid black; border-radius: 11px; padding: 9px ">
+                <div class="container-fluid" style="">
+                    @Html.ActionLink("AfricanShopLviv", "MainPage", "Home", new { area = "" }, new { @class = "navbar-brand", id = "hompg" })
+                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav">
+                            &nbsp;                        &nbsp;                        &nbsp;                        &nbsp;                        &nbsp;                &nbsp;
+                            @Html.ActionLink("Contacts", "MainPage", "Home", new { param = "Contacts" }, new { id = "btn", @class = "nav-item nav-link" })
+                            @Html.ActionLink("Delivery", "MainPage", "Home", new { param = "Delivery" }, new { id = "btn", @class = "nav-item nav-link" })
+                            @Html.ActionLink("Payments", "MainPage", "Home", new { param = "Payments" }, new { id = "btn", @class = "nav-item nav-link" })
+                            @Html.ActionLink("Videos", "MainPage", "Home", new { param = "Videos" }, new { id = "btn", @class = "nav-item nav-link" })
+                        </div>
+                        <div class="navbar-nav ms-auto">
+                            @Html.Partial("_LoginPartial")
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+
+        </header>
     </div>
 
-    <div class="container body-content" style="border:1px solid red">
- 
+    <div class="container body-content" style="background-image: linear-gradient(transparent, tomato, transparent, darkorange, transparent)">
         @RenderBody()
         <br /><br /><br />
         <hr />
-        <footer style="text-align:center;font-weight:bold">
-            <p>
-                &copy; @DateTime.Now.Year - African Shop. Lychakivska 31 str., Lviv, Ua
-            </p>
-        </footer>
+        <!--<footer>
+        <div style="margin:auto;width:470px">-->
+        @*style="text-align:center;font-weight:bold;border-radius:22px;background-image:linear-gradient(tomato,lightyellow,lightgreen);padding:9px"*@
+        <!--<h4 style="text-align:center;border-radius:12px;padding:6px;color:gold; background-color:black"> &copy; @DateTime.Now.Year - African Shop. Lychakivska 31 str., Lviv, Ua</h4>
+        </div>
+    </footer>-->
+            <!-- Footer -->
+            <footer class="text-center  text-white"
+                    style="background-color: black;opacity:0.5">
+                <!-- Grid container -->
+                <div class="container p-4 pb-0">
+                    <!-- Section: Links -->
+                    <section class="">
+                        <!--Grid row-->
+                        <div class="row">
+
+                        </div>
+                        <!--Grid row-->
+                    </section>
+                    <!-- Section: Links -->
+
+                    <hr class="mb-4" />
+
+                    <!-- Section: CTA -->
+                    <section class="">
+                        <p class="d-flex justify-content-center align-items-center">
+                            <span class="me-3">Register for free</span>
+                            @Html.ActionLink("Sign up!", "Register", "Account", null, new { @class = "btn btn-outline-light btn-rounded" }) 
+                        </p>
+                    </section>
+                    <!-- Section: CTA -->
+
+                    <hr class="mb-4" />
+
+                    <!-- Section: Social media -->
+                    <section class="mb-4 text-center">
+                        <!-- Facebook -->
+                        <a class="btn btn-outline-light btn-floating m-1"
+                           href="#!"
+                           role="button">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <!-- Twitter -->
+                        <a class="btn btn-outline-light btn-floating m-1"
+                           href="#!"
+                           role="button">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+                        <!-- Google -->
+                        <a class="btn btn-outline-light btn-floating m-1"
+                           href="#!"
+                           role="button">
+                            <i class="fab fa-google"></i>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a class="btn btn-outline-light btn-floating m-1"
+                           href="#!"
+                           role="button">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <!-- Linkedin -->
+                        <a class="btn btn-outline-light btn-floating m-1"
+                           href="#!"
+                           role="button">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <!-- Github -->
+                        <a class="btn btn-outline-light btn-floating m-1"
+                           href="#!"
+                           role="button">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </section>
+                    <!-- Section: Social media -->
+                </div>
+                <!-- Grid container -->
+                <!-- Copyright -->
+                <div class="text-center p-3"
+                     style="background-color: rgba(0, 0, 0, 0.2)">
+                    © 2020 Copyright:
+                    <a class="text-white" href="#">&copy; @DateTime.Now.Year - African Shop. Lychakivska 31 str., Lviv, Ua</a>
+                </div>
+                <!-- Copyright -->
+            </footer>
+            <!-- Footer -->
     </div>
 
     @Scripts.Render("~/bundles/jquery")
@@ -62,6 +161,19 @@
 </html>
 
 <style>
+    #cartFixed {
+        position: fixed;
+        z-index: 100;
+        border: 0.4px solid white;
+        border-radius: 55px;
+        background-color: white;
+        padding: 15px;
+        margin: 80px 0 0 0;
+    }
+        #cartFixed:hover {
+            background-image: linear-gradient(transparent, yellow, black, yellow);
+            border: 0.4px solid yellow;
+        }
     .btn-group button {
         background-color: #04AA6D; /* Green background */
         border: 1px solid green; /* Green border */
@@ -75,27 +187,25 @@
         .btn-group button:not(:last-child) {
             border-bottom: none; /* Prevent double borders */
         }
-
         /* Add a background color on hover */
         .btn-group button:hover {
             background-color: #3e8e41;
         }
-
-
-
-
-
-
-
-
-
+    body {
+        background: url(../../Images/img/backgroundImg.png) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
     html {
         height: 100%;
-        background-image: linear-gradient(to right top, #8e44ad 0%, #3498db 100%);
+        /*background-image: linear-gradient(to right top, #8e44ad 0%, #3498db 100%);*/
+      
     }
 
     nav {
-       max-width: 1200px;
+        max-width: 1200px;
         mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
         margin: 0 auto;
         padding: 60px 0;
@@ -113,19 +223,24 @@
         padding: 9px;
         font-weight: bold;
         font-family: Palatino Linotype;
+        color:gold;
+        font-size:x-large;
     }
+
         #hompg:hover {
             border-radius: 9px;
-            color:gold;
-            padding:9px;
+            color: white;
+            padding: 9px;
             background-color: #8e44ad;
             border: 0.1px solid #8e44ad;
+            background-image: linear-gradient(violet, blue);
         }
+
         #hompg:active {
             border-radius: 9px;
             border: 0.1px solid gold;
             background-color: gold;
-            color:black;
+            color: black;
         }
 
     #btn {
@@ -133,17 +248,20 @@
         border-radius: 9px;
         font-family: Palatino Linotype;
         font-weight: bold;
+        color:white;
     }
+
         #btn:hover {
             color: white;
-            border: 0.1px solid #3498db;
+            border: 0.1px solid yellow;
             background-color: #3498db;
             border-radius: 9px;
+            background-image: linear-gradient(red, yellow);
         }
+
         #btn:active {
             color: white;
             border: 0.1px solid gold;
-            color: red;
             background-color: gold;
             border-radius: 9px;
         }

@@ -11,6 +11,6 @@
 
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<ShopingCart> ShopingCart { get; set; }
+        public virtual DbSet<ShopingCart> ShopingCarts { get; set; }
     }
 }

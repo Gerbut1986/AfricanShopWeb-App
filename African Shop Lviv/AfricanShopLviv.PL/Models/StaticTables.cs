@@ -7,7 +7,7 @@
     {
         public static IEnumerable<CategoryDto> Categories { get; set; } = new List<CategoryDto>();
         public static IEnumerable<ProductDto> Products { get; set; } = new List<ProductDto>();
-        public static IEnumerable<CartDto> Carts { get; set; } = new List<CartDto>();
+        public static List<CartDto> Carts { get; set; } = new List<CartDto>();
 
         public static void ClearAllTbls()
         {

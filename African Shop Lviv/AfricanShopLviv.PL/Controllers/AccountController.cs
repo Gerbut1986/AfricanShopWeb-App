@@ -20,6 +20,7 @@
         public static List<ApplicationUser> AllUsers { get; private set; }
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private string CurrentUserEmail { get; set; }
         #endregion
 
         #region Constructors:
@@ -71,6 +72,7 @@
             else
             {
                 AllUsers = UserManager.Users.ToList();
+               
                 ApplicationUser signedUser = UserManager.FindByEmail(model.Email);
 
                 if (signedUser == null) // if login and password doesn't exists
@@ -93,7 +95,7 @@
                             
                                 break;
                             case "RegisterUser":
-  
+
                                 break;
                             case "Unknown":
                               
@@ -240,7 +242,7 @@
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("MainPage", "Home");
         }
              
         protected override void Dispose(bool disposing)
@@ -289,7 +291,7 @@
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("MainPage", "Home");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

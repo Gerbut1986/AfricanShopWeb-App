@@ -15,30 +15,30 @@
 
         public async Task Create(ShopingCart entity)
         {
-            db.ShopingCart.Add(entity);
+            db.ShopingCarts.Add(entity);
             await db.SaveChangesAsync();
         }
 
         public async Task Delete(int id)
         {
-            var en = await db.ShopingCart.FindAsync(id);
-            db.ShopingCart.Remove(en);
+            var en = await db.ShopingCarts.FindAsync(id);
+            db.ShopingCarts.Remove(en);
             await db.SaveChangesAsync();
         }
 
         public async Task<ShopingCart> Get(int id)
         {
-            return await db.ShopingCart.FindAsync(id);
+            return await db.ShopingCarts.FindAsync(id);
         }
 
         public IQueryable<ShopingCart> GetAll()
         {
-            return db.ShopingCart;
+            return db.ShopingCarts;
         }
 
         public async Task<System.Collections.Generic.List<ShopingCart>> GetAllAsync()
         {
-            var lst = (from ci in db.ShopingCart select ci);
+            var lst = (from ci in db.ShopingCarts select ci);
             return await lst.ToListAsync();
         }
 
@@ -49,7 +49,7 @@
 
         public async Task UpdateAsync(int id)
         {
-            db.Entry(await db.ShopingCart.FindAsync(id)).State = EntityState.Modified;
+            db.Entry(await db.ShopingCarts.FindAsync(id)).State = EntityState.Modified;
             await db.SaveChangesAsync();
         }
     }

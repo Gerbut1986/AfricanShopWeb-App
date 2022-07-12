@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DTO\CartDto.cs" />
     <Compile Include="DTO\CategoryDto.cs" />
+    <Compile Include="DTO\EmailEntity\EmailData.cs" />
     <Compile Include="DTO\ProductDto.cs" />
     <Compile Include="Interfaces\IEmailEntity.cs" />
     <Compile Include="Interfaces\IEmailSender.cs" />
