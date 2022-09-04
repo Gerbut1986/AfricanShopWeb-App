@@ -11,6 +11,7 @@
 
         #region All Repos:    
         CartRepository cartRepo;
+        OrderRepository orderRepo;
         ProductRepository productRepo;
         CategoryRepository categoryRepo;
         #endregion
@@ -44,6 +45,16 @@
                 if (cartRepo == null)
                     cartRepo = new CartRepository(db);
                 return cartRepo;
+            }
+        }
+
+        public IRepository<Order> Orders
+        {
+            get
+            {
+                if (orderRepo == null)
+                    orderRepo = new OrderRepository(db);
+                return orderRepo;
             }
         }
 

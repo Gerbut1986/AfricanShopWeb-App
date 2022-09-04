@@ -1,0 +1,122 @@
+﻿
+@{
+    var product = ViewBag.SelectedProduct as AfricanShopLviv.BLL.DTO.ProductDto;
+    var categtId = ViewBag.CategoryId;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div style="border:1px solid gold; padding:15px;overflow:auto;width:100%;border-radius:16px" class="form-horizontal">
+    <h4 style="font-family:'Palatino Linotype'">Add New Product</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => product.Name, htmlAttributes: new { id = "lbl", @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => product.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => product.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => product.Description, htmlAttributes: new { id = "lbl", @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => product.Description, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => product.Description, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Photo", htmlAttributes: new { id = "lbl", @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input id="fileinput" type="file" accept=".jpg, .jpeg, .png, .icon, .ico, .gif">
+            @*<input type="file" id="fileUpload" />*@
+            <input type="button" id="btnUpload" value="Upload Photo" class="form-control-file" />
+            @Html.ValidationMessageFor(model => product.Photo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => product.Price, htmlAttributes: new { id = "lbl", @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => product.Price, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => product.Price, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => product.Code, htmlAttributes: new { id = "lbl", @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => product.Code, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => product.Code, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => product.IsStock, htmlAttributes: new { id = "lbl", @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.CheckBoxFor(model => product.IsStock, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => product.IsStock, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group" style="margin-top:9px">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" name="btn-AddProductToDB" style="width:100%" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#btnUpload').click(function () {
+
+            // Checking whether FormData is available in browser
+            if (window.FormData !== undefined) {
+
+                var fileUpload = $("#fileinput").get(0);
+                var files = fileUpload.files;
+
+                // Create FormData object
+                var fileData = new FormData();
+
+                // Looping over all files and add it to FormData object
+                for (var i = 0; i < files.length; i++) {
+                    fileData.append(files[i].name, files[i]);
+                }
+
+                $.ajax({
+                    url: '/Admin/PhotoUpload',
+                    type: "POST",
+                    contentType: false,
+                    processData: false,
+                    data: fileData,
+                    success: function (result) {
+                        alert(result);
+                    },
+                    error: function (err) {
+                        alert(err.statusText);
+                    }
+                });
+            } else {
+                alert("FormData is not supported.");
+            }
+        });
+    });
+</script>
+
+<style>
+    #lbl {
+        width: 100px;
+    }
+</style>
+
+<div>
+    @Html.ActionLink("Back to List", "_829528a_441d_484m_862i_22475963ffdn", "admin",
+    new { isPartView = "true", partViewName = "ProductsPart", categId = @categtId }, new { @class = "btn btn-primary" })
+</div>
+

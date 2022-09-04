@@ -1,0 +1,57 @@
+﻿
+@{
+    var listProducts = ViewBag.Products as List<AfricanShopLviv.BLL.DTO.ProductDto>;
+    var categtory = ViewBag.Category;
+
+    <h5 style="text-align: center; color: darkorange; font-family: 'Palatino Linotype'; font-weight: bold">
+        @categtory
+    </h5>
+
+    using (Html.BeginForm())
+    {
+        <div>
+            <button style="" name="btn-AddProduct" type="submit" class="btn btn-warning">Add New Product</button>
+        </div>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr style="text-align:center">
+                    <th scope="col">#</th>
+                    <th scope="col">Photo</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Code</th>
+                    <th scope="col">Date Added</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Is Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var prod in listProducts)
+                {
+                    var isStock = prod.IsStock == true ? "In Stock" : "Out of stock";
+                    string photo = "~/Images/Products/" + prod.Photo;
+                    <tr style="text-align:center">
+                        <th scope="row">@prod.Id</th>
+                        <th scope="row">
+                            <img width="40" height="40" src="@Url.Content(photo)" />
+                        </th>
+                        <td>@prod.Name</td>
+                        <td>@prod.Price</td>
+                        <td>@prod.Code</td>
+                        <td>@prod.Date</td>
+                        <td>@categtory</td>
+                        <td>@isStock</td>
+                        <td>
+                            <div style="width:200px">
+                                <button type="submit" name="btn-Edit-@prod.Id" class="btn btn-warning" style="background-color:yellow;">Edit</button>
+                                <button type="submit" name="btn-Details-@prod.Id" style="" class="btn btn-success">Details</button>
+                                <button type="submit" name="btn-Delete-@prod.Id" style="" class="btn btn-danger">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+

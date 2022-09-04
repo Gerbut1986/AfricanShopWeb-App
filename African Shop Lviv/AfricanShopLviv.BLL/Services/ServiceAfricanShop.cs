@@ -110,7 +110,7 @@
         #endregion
 
         #region Product Service:
-        public void Insert(ProductDto dto)
+        public async Task Insert(ProductDto dto)
         {
             try
             {
@@ -125,9 +125,9 @@
                     Photo = dto.Photo,
                     Price = dto.Price
                 };
-                Db.Products.Create(model);
+                await Db.Products.Create(model);
             }
-            catch { throw new Exception($"Method - '{nameof(Insert)}({dto.GetType().Name})'"); }
+            catch(Exception ex) { throw new Exception($"Method - '{nameof(Insert)}({dto.GetType().Name})'"); }
         }
 
         public IEnumerable<ProductDto> ReadProducts()
@@ -171,12 +171,22 @@
             return listDTO;
         }
 
+        public async Task UpdateAsync(int id)
+        {
+            try
+            {
+                await Db.Products.UpdateAsync(id);
+            }
+            catch (Exception ex) { var error = ex.Message; }
+        }
+
         public void Update(ProductDto dto)
         {
             try
             {
                 var model = new Product
                 {
+                    Id = dto.Id,
                     Name = dto.Name,
                     Code = dto.Code,
                     CategoryId = dto.CategoryId,
@@ -188,7 +198,7 @@
                 };
                 Db.Products.Update(model);
             }
-            catch { throw new Exception($"Method - '{nameof(Update)}({dto.GetType().Name})'"); }
+            catch(Exception ex) { throw new Exception($"Method - '{nameof(Update)}({dto.GetType().Name})'"); }
         }
 
         public void DeleteProduct(int id)
@@ -197,7 +207,7 @@
             {
                 Db.Products.Delete(id);
             }
-            catch { throw new Exception($"Method - '{nameof(DeleteProduct)}({id})'"); }
+            catch(Exception ex) { throw new Exception($"Method - '{nameof(DeleteProduct)}({id})'"); }
         }
         #endregion
 
@@ -271,6 +281,81 @@
             }
             catch { throw new Exception($"Method - '{nameof(DeleteCategory)}({id})'"); }
         }
-        #endregion   
+        #endregion
+
+        #region Order Service:
+        public void Insert(OrderDto dto)
+        {
+            try
+            {
+                var model = new Order
+                {
+                    OrderDate = dto.OrderDate,
+                    TotalAmount = dto.TotalAmount,
+                    Products = dto.Products,
+                    UserId = dto.UserId
+                };
+                Db.Orders.Create(model);
+            }
+            catch { throw new Exception($"Method - '{nameof(Insert)}({dto.GetType().Name})'"); }
+        }
+
+        public IEnumerable<OrderDto> ReadOrders()
+        {
+            var list = Db.Orders.GetAll().ToList();
+            var listDTO = new List<OrderDto>();
+            for (int i = 0; i < list.Count; i++)
+            {
+                listDTO.Add(new OrderDto());
+                listDTO[i].Id = list[i].Id;
+                listDTO[i].TotalAmount = list[i].TotalAmount;
+                listDTO[i].OrderDate = list[i].OrderDate;
+                listDTO[i].UserId = list[i].UserId;
+                listDTO[i].Products = list[i].Products;
+            }
+            return listDTO;
+        }
+
+        public async Task<List<OrderDto>> ReadOrdersAsync()
+        {
+            var list = await Db.Orders.GetAllAsync();
+            var listDTO = new List<OrderDto>();
+            for (int i = 0; i < list.Count; i++)
+            {
+                listDTO.Add(new OrderDto());
+                listDTO[i].Id = list[i].Id;
+                listDTO[i].TotalAmount = list[i].TotalAmount;
+                listDTO[i].OrderDate = list[i].OrderDate;
+                listDTO[i].UserId = list[i].UserId;
+                listDTO[i].Products = list[i].Products;
+            }
+            return listDTO;
+        }
+
+        public void Update(OrderDto dto)
+        {
+            try
+            {
+                var model = new Order
+                {
+                    OrderDate = dto.OrderDate,
+                    TotalAmount = dto.TotalAmount,
+                    Products = dto.Products,
+                    UserId = dto.UserId
+                };
+                Db.Orders.Update(model);
+            }
+            catch { throw new Exception($"Method - '{nameof(Insert)}({dto.GetType().Name})'"); }
+        }
+
+        public void DeleteOrder(int id)
+        {
+            try
+            {
+                Db.Orders.Delete(id);
+            }
+            catch { throw new Exception($"Method - '{nameof(DeleteOrder)}({id})'"); }
+        }
+        #endregion
     }
 }

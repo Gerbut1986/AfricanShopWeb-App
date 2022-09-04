@@ -8,7 +8,6 @@
     Product Pagination Test
 </h1>
 
-<table class="table">
     @foreach (var product in Model)
     {<!--~/Images/Products/Fair and White Gold Rejuvenating Moisture Lotion Number 3 3 500ml.jpeg-->
         string path = $"~/Images/Products/{product.Photo}";
@@ -39,7 +38,7 @@
         </div>
     }
 
-</table>
+
 <br />
 <div>
     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) from @Model.PageCount

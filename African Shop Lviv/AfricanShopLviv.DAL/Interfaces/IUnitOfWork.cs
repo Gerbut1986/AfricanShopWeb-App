@@ -7,6 +7,7 @@
         IRepository<Product> Products { get; }
         IRepository<Category> Categories { get; }
         IRepository<ShopingCart> Carts { get; }
+        IRepository<Order> Orders { get; }
         System.Threading.Tasks.Task<int> SaveAsync();
     }
 }

@@ -1,187 +1,108 @@
-﻿@model AfricanShopLviv.PL.Models.ApplicationUser
+﻿@model AfricanShopLviv.PL.Models.LoginViewModel
 @{
     Layout = null;
 }
-
-<!DOCTYPE html>
-
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>admin</title>
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-2"></div>
-            <div class="col-lg-6 col-md-8 login-box">
-                <div class="col-lg-12 login-key">
-                    <i class="fa fa-key" aria-hidden="true"></i>
-                </div>
-                <div class="col-lg-12 login-title">
-                    ADMIN PANEL
-                </div>
-                @using (Html.BeginForm())
+    <title>African Shop - Admin Part</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/Content/AdminPart/LoginForm/theme-bootstrap-login-form-20/css/A.style.css.pagespeed.cf.eQk9-CoeFP.css")">
+    <script nonce="cc73c18c-d00f-4bf9-8a66-7ba3dd21292d">
+        (function (w, d) {
+            !function (a, e, t, r)
+            {
+                a.zarazData = a.zarazData || {}; a.zarazData.executed = []; a.zaraz =
+                    { deferred: [] }; a.zaraz.q = []; a.zaraz._f =
+                    function (e) { return function () { var t = Array.prototype.slice.call(arguments); a.zaraz.q.push({ m: e, a: t }) } };
+                for (const e of ["track", "set", "ecommerce", "debug"]) a.zaraz[e] = a.zaraz._f(e); a.zaraz.init = () =>
                 {
-                    <div class="col-lg-12 login-form">
-                        <div class="col-lg-12 login-form">
-                            <form>
-                                <div class="form-group">
-                                    <label class="form-control-label">USERNAME</label>
-                                    <input type="text" class="form-control">
+                    var t = e.getElementsByTagName(r)[0], z = e.createElement(r), n = e.getElementsByTagName("title")[0];
+                    n && (a.zarazData.t = e.getElementsByTagName("title")[0].text); a.zarazData.x = Math.random(); a.zarazData.w = a.screen.width;
+                    a.zarazData.h = a.screen.height; a.zarazData.j = a.innerHeight; a.zarazData.e = a.innerWidth; a.zarazData.l = a.location.href;
+                    a.zarazData.r = e.referrer; a.zarazData.k = a.screen.colorDepth; a.zarazData.n = e.characterSet;
+                    a.zarazData.o = (new Date).getTimezoneOffset(); a.zarazData.q = [];
+                    for (; a.zaraz.q.length;){ const e = a.zaraz.q.shift(); a.zarazData.q.push(e) } z.defer = !0;
+                    for (const e of [localStorage, sessionStorage])
+                        Object.keys(e || {}).filter((a => a.startsWith("_zaraz_"))).forEach((t => {
+                            try { a.zarazData["z_" + t.slice(7)] = JSON.parse(e.getItem(t)) }
+                            catch { a.zarazData["z_" + t.slice(7)] = e.getItem(t) }
+                        })); z.referrerPolicy = "origin";
+                    z.src = "@Url.Content("~/Content/AdminPart/LoginForm/theme-bootstrap-login-form-20/cdn-cgi-zaraz/s.js?z=")" + btoa(encodeURIComponent(JSON.stringify(a.zarazData)));
+                    t.parentNode.insertBefore(z, t)
+                };["complete", "interactive"].includes(e.readyState) ? zaraz.init() : a.addEventListener("DOMContentLoaded", zaraz.init)
+            }(w, d, 0, "script");
+        })(window, document);</script>
+</head>
+<body class="img js-fullheight" style="height:740px; background-image:url(@Url.Content("~/Content/AdminPart/LoginForm/theme-bootstrap-login-form-20/images/xbg.jpg.pagespeed.ic.tiVxeakBSd.PNG")">
+    @using (Html.BeginForm())
+    { 
+    <section class="ftco-section">
+        @if (ViewBag.IsError == true)
+        {
+            <h5 style="text-align:center;color:red;font-family:'Palatino Linotype'">
+                @ViewBag.Error
+            </h5>
+        }
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Admin Panel</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+                        <h3 class="mb-4 text-center">R U Owner?</h3>
+                        <form action="#" class="signin-form">
+                            <div class="form-group">
+                                @Html.TextBoxFor(p => p.Email, new { placeholder = "Email Админа:", @class = "form-control", style = "color:white" })<br />
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger", style = "font-size:small" })
+                            </div>
+                            <div class="form-group">
+                                @Html.PasswordFor(p => p.Password, new { placeholder = "Пароль Админа:", id = "password-field", @class = "form-control", style = "color:white" })<br />
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger", style = "font-size:small" })
+                                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary submit px-3">
+                                    Enter
+                                </button>
+                            </div>
+                            <div class="form-group d-md-flex">
+                                <div class="w-50">
+                                    <label class="checkbox-wrap checkbox-primary">
+                                        Remember Me
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                    </label>
                                 </div>
-                                <div class="form-group">
-                                    <label class="form-control-label">PASSWORD</label>
-                                    @Html.TextBoxFor(p=>p.P)
-                                    <input type="password" class="form-control" i>
+                                <div class="w-50 text-md-right">
+                                    <a href="#" style="color: #fff">Forgot Password</a>
                                 </div>
-
-                                <div class="col-lg-12 loginbttm">
-                                    <div class="col-lg-6 login-btm login-text">
-                                        <!-- Error Message -->
-                                    </div>
-                                    <div style="width:110px;margin:auto;padding:12px" class="login-button">
-                                        <button type="submit" class="btn btn-outline-primary">LOGIN</button>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
+                        </form>
+                        <p hidden class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
+                        <div style="opacity:-1" class="social d-flex text-center">
+                            <a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>
+                            <a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a>
                         </div>
                     </div>
-                }
-                <div class="col-lg-3 col-md-2"></div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <style>
-        body {
-            background: #A2A4A4;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .login-box {
-            margin-top: 75px;
-            height: auto;
-            background: #1A2226;
-            text-align: center;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-        }
-
-        .login-key {
-            height: 100px;
-            font-size: 80px;
-            line-height: 100px;
-            background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .login-title {
-            margin-top: 15px;
-            text-align: center;
-            font-size: 30px;
-            letter-spacing: 2px;
-            margin-top: 15px;
-            font-weight: bold;
-            color: #ECF0F5;
-        }
-
-        .login-form {
-            margin-top: 25px;
-            text-align: left;
-        }
-
-        input[type=text] {
-            background-color: #1A2226;
-            border: none;
-            border-bottom: 2px solid #0DB8DE;
-            border-top: 0px;
-            border-radius: 0px;
-            font-weight: bold;
-            outline: 0;
-            margin-bottom: 20px;
-            padding-left: 0px;
-            color: #ECF0F5;
-        }
-
-        input[type=password] {
-            background-color: #1A2226;
-            border: none;
-            border-bottom: 2px solid #0DB8DE;
-            border-top: 0px;
-            border-radius: 0px;
-            font-weight: bold;
-            outline: 0;
-            padding-left: 0px;
-            margin-bottom: 20px;
-            color: #ECF0F5;
-        }
-
-        .form-group {
-            margin-bottom: 40px;
-            outline: 0px;
-        }
-
-        .form-control:focus {
-            border-color: inherit;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-            border-bottom: 2px solid #ECF0F5;
-            outline: 0;
-            background-color: #1A2226;
-            color: #ECF0F5;
-        }
-
-        input:focus {
-            outline: none;
-            box-shadow: 0 0 0;
-        }
-
-        label {
-            margin-bottom: 0px;
-        }
-
-        .form-control-label {
-            font-size: 10px;
-            color: #A2A4A4;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .btn-outline-primary {
-            border-color: #0DB8DE;
-            color: #0DB8DE;
-            border-radius: 0px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-        }
-
-            .btn-outline-primary:hover {
-                background-color: #0DB8DE;
-                right: 0px;
-            }
-
-        .login-btm {
-            float: left;
-        }
-
-        .login-button {
-            padding-right: 0px;
-            text-align: right;
-            margin-bottom: 25px;
-        }
-
-        .login-text {
-            text-align: left;
-            padding-left: 0px;
-            color: #A2A4A4;
-        }
-
-        .loginbttm {
-            padding: 0px;
-        }
-    </style>
+    </section>
+    }
+    <script src="@Url.Content("~/Content/AdminPart/LoginForm/theme-bootstrap-login-form-20/js/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Content/AdminPart/LoginForm/theme-bootstrap-login-form-20/js/popper.js+bootstrap.min.js+main.js.pagespeed.jc.9eD6_Mep8S.js")"></script>
+    <script>eval(mod_pagespeed_T07FyiNNgg);</script>
+    <script>eval(mod_pagespeed_zB8NXha7lA);</script>
+    <script>eval(mod_pagespeed_xfgCyuItiV);</script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"72ce7fb10a232d97","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.6.0","si":100}' crossorigin="anonymous"></script>
 </body>
 </html>
+
+

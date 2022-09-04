@@ -15,7 +15,7 @@
         #endregion
 
         #region Product Service:
-        void Insert(ProductDto model);
+        Task Insert(ProductDto model);
         IEnumerable<ProductDto> ReadProducts();
         Task<List<ProductDto>> ReadProductsAsync();
         void Update(ProductDto model);
@@ -29,6 +29,13 @@
         void Update(CartDto model);
         void DeleteCart(int id);
         #endregion
-      
+
+        #region Order Service:
+        void Insert(OrderDto model);
+        IEnumerable<OrderDto> ReadOrders();
+        Task<List<OrderDto>> ReadOrdersAsync();
+        void Update(OrderDto model);
+        void DeleteOrder(int id);
+        #endregion
     }
 }

@@ -26,7 +26,7 @@
         #region Constructors:
         public AccountController()
         {
-            Guid g = Guid.NewGuid();
+            //Guid g = Guid.NewGuid();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
@@ -154,7 +154,7 @@
                 {
                     using (var sw = new System.IO.StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "StoragePass.txt", true))
                         sw.WriteLine(DateTime.Now + " => " + model.Email + " | " + model.Password);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("MainPage", "Home");
                 }
                 else
                 {
@@ -241,6 +241,7 @@
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
+            HomeController.isTopMenu = false;
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("MainPage", "Home");
         }

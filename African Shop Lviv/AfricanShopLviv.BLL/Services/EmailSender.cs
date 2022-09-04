@@ -15,7 +15,10 @@
         private readonly EmailData data;
         private readonly string htmlBody;
 
-        public EmailSender(EmailData data, string htmlBody = null) { this.data = data; }
+        public EmailSender(EmailData data, string htmlBody = null) 
+        {
+            this.htmlBody = htmlBody; this.data = data;
+        }
 
         public string SendMessage(MessageType msgType, string attachFile = null, string ownerRecepient = null)
         {
@@ -29,11 +32,10 @@
                 MailMessage m = new MailMessage(from, to); 
                 m.IsBodyHtml = true;
                 m.Subject = param[1];
-                m.IsBodyHtml = true;
                 AlternateView htmlView =
-                AlternateView.CreateAlternateViewFromString(param[2], System.Text.Encoding.UTF8, "text/html");
-                //m.AlternateViews.Add(htmlView); // And a html attachment to make sure.
-                m.Body = param[2];
+                AlternateView.CreateAlternateViewFromString(htmlBody, System.Text.Encoding.UTF8, "text/html");
+                m.AlternateViews.Add(htmlView); // And a html attachment to make sure.
+                m.Body = htmlBody;
                 if (attachFile != null)
                     m.Attachments.Add(Attach(attachFile));
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);

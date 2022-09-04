@@ -1,0 +1,38 @@
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\AfricanShopLviv.BLL.dll
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\AfricanShopLviv.BLL.pdb
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\AfricanShopLviv.DAL.dll
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\EntityFramework.dll
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\AfricanShopLviv.DAL.pdb
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\AfricanShopLviv.DAL.dll.config
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\EntityFramework.xml
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\obj\Release\AfricanShopLviv.BLL.csproj.AssemblyReference.cache
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\obj\Release\AfricanShopLviv.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\obj\Release\AfricanShopLviv.BLL.csproj.CopyComplete
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\obj\Release\AfricanShopLviv.BLL.dll
+C:\Users\Андрей\Desktop\C# Programming(Andrii)\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\obj\Release\AfricanShopLviv.BLL.pdb
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\AfricanShopLviv.BLL.dll.config
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\AfricanShopLviv.BLL.dll
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\AfricanShopLviv.BLL.pdb
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\AfricanShopLviv.DAL.dll
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\Microsoft.Web.Infrastructure.dll
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\System.Web.Helpers.dll
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\System.Web.Mvc.dll
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\System.Web.Razor.dll
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\System.Web.WebPages.Deployment.dll
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\System.Web.WebPages.dll
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\System.Web.WebPages.Razor.dll
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\EntityFramework.dll
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\AfricanShopLviv.DAL.pdb
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\AfricanShopLviv.DAL.dll.config
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\System.Web.Helpers.xml
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\System.Web.Mvc.xml
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\System.Web.Razor.xml
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\System.Web.WebPages.xml
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\System.Web.WebPages.Deployment.xml
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\System.Web.WebPages.Razor.xml
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\bin\Release\EntityFramework.xml
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\obj\Release\AfricanShopLviv.BLL.csproj.AssemblyReference.cache
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\obj\Release\AfricanShopLviv.BLL.csproj.CoreCompileInputs.cache
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\obj\Release\AfricanShopLviv.BLL.csproj.CopyComplete
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\obj\Release\AfricanShopLviv.BLL.dll
+C:\Users\ANDRE\Documents\Tanya Mark Website\AfricanShopWeb-App\African Shop Lviv\AfricanShopLviv.BLL\obj\Release\AfricanShopLviv.BLL.pdb

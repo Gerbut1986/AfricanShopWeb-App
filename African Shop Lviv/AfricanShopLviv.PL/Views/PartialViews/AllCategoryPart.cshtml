@@ -1,0 +1,43 @@
+﻿
+@{
+    List<AfricanShopLviv.BLL.DTO.CategoryDto> categories = ViewBag.Categories;
+
+
+    <div class="row" style="padding:9px">
+        <div style="background-color:whitesmoke;padding:9px;color:mediumvioletred;font-weight:bold">
+            <span style="font-family:'Palatino Linotype';font-size:large">All Categories</span>
+        </div>
+        @foreach (var category in categories)
+        {
+            <div id="photoBorder" class="col-md-4">
+       
+                <button id="btnCateg" class="btn btn-default" name="btn-@category.TagName">
+                    <div style="width:200px;height:50px">
+                        <span id="name">@category.Name</span>
+                    </div>
+                    <div style="height:150px;width:200px">
+                        <img class="movie-btn widscreen-btn" height="100%" width="100%" src="~/Images/Categories/@category.Photo" />
+                    </div>
+                </button>
+            </div>
+        }
+    </div>
+}
+
+
+<style>
+    #name {
+        color: white;
+    }
+    #name:hover {
+        color: blue;
+    }
+    #photoBorder {
+        margin-top: 9px;
+        margin-left: 0px;
+    }
+
+        #photoBorder:hover {
+           
+        }
+</style>

@@ -1,0 +1,91 @@
+﻿
+
+
+@{
+    var person = ViewBag.CurrentUser as AfricanShopLviv.PL.Models.ApplicationUser;
+
+    using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+<div style="color: white; border: 1px solid green; background-color: green; border-radius: 26px; padding: 16px" class="">
+    <h2 style="color:darkorange;font-family:'Palatino Linotype';text-align:center">
+        Into 'bout me:
+    </h2>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => person.Id)
+
+    <div class="form-group">
+        <p class="control-label col-md-2">Unique Identifier:</p>
+        <div class="col-md-10">
+            <input type="text" value=@person.Id class="form-control" style="background-color:silver" readonly />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p class="control-label col-md-2">User Id:</p>
+        <div class="col-md-10">
+            <input type="text" value=@person.UserId class="form-control" style="background-color:silver" readonly />
+            @Html.ValidationMessageFor(model => person.UserId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p class="control-label col-md-2">First Name:</p>
+        <div class="col-md-10">
+            <input type="text" value=@person.FirstName class="form-control" style="background-color:silver" readonly />
+            @Html.ValidationMessageFor(model => person.FirstName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p class="control-label col-md-2">Last Name:</p>
+        <div class="col-md-10">
+            <input type="text" value=@person.LastName class="form-control" style="background-color:silver" readonly />
+            @Html.ValidationMessageFor(model => person.LastName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p class="control-label col-md-2">Email:</p>
+        <div class="col-md-10">
+            <input type="text" value=@person.Email class="form-control" style="background-color:silver" readonly />
+            @Html.ValidationMessageFor(model => person.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p class="control-label col-md-2">Phone Number:</p>
+        <div class="col-md-10">
+            <input type="text" value=@person.PhoneNumber class="form-control" style="background-color:silver" readonly />
+            @Html.ValidationMessageFor(model => person.PhoneNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p class="control-label col-md-2">Role:</p>
+        <div class="col-md-10">
+            <input type="text" value=@person.Role class="form-control" style="background-color:silver" readonly />
+            @Html.ValidationMessageFor(model => person.Role, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p class="control-label col-md-2">Date Register:</p>
+        <div class="col-md-10">
+            <input type="text" value=@person.DateRegister class="form-control" style="background-color:silver" readonly />
+            @Html.ValidationMessageFor(model => person.DateRegister, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @*<div class="form-group" style="margin-top:9px">
+        <div class="col-md-offset-10 col-md-10">
+            <input style="width:100%" name="btn-Editperson" type="submit" value="Update" class="btn btn-primary" />
+        </div>
+    </div>*@
+</div>
+    }
+
+
+}
+
