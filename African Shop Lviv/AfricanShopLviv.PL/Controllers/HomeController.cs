@@ -20,6 +20,7 @@
         private Guid AccessToken { get; set; }
         private readonly ServiceAfricanShop db;
         static string nameCategoryPressed = null;
+        public static int CntAdd { get; set; } = 0;
         public static double TotalSum { get; set; } = 0;
         public static bool IsCart { get; set; } = false;
         private static bool IsEmptyCart { get; set; } = false;
@@ -34,11 +35,12 @@
         public HomeController()
         {
             db = new ServiceAfricanShop(Init.ConnectionStr);
-            StaticTables.Categories = db.ReadCategories();
-            StaticTables.Carts = db.ReadCarts().ToList();
-            if (VideoPath == null) 
             try
             {
+                StaticTables.Categories = db.ReadCategories();
+                StaticTables.Carts = db.ReadCarts().ToList();
+                if (VideoPath == null)
+
                     VideoPath = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + "Videos", "*");
             }
             catch { }
@@ -86,7 +88,7 @@
             try
             {
                 ViewBag.Videos = FillVideoNames(VideoPath, list);
-            }   
+            }
             catch { }
 
             // If have an order or clicked Cart btn:
@@ -94,17 +96,21 @@
             {
                 await CurrentOrDefaultUser(CurrentLocalUser);
                 StaticTables.Carts = StaticTables.Carts.Where(u => u.UserId == CurrentLocalUser.UserId).ToList();
+                CntAdd = StaticTables.Carts.Count;
                 isTopMenu = false;
                 TotalSum = StaticTables.Carts.Sum(t => t.ItemsPrice); // View cart's total sum 
                 IsCart = true;
                 isOrder = true;
-                if (StaticTables.Carts.Count() == 0) 
+                if (StaticTables.Carts.Count() == 0)
                     IsEmptyCart = true;
                 { ViewBag.Cart = StaticTables.Carts; }
             }
             if (param != null)
                 ViewBag.PartialView = TopMenuClicked(param);
+            else isTopMenu = false;
 
+            { ViewBag.IsModal = isModal; }
+            { ViewBag.ModalMsg = modalMsg; }
             { ViewBag.Cart = StaticTables.Carts; }
             { ViewBag.CurrentUser = CurrentLocalUser; }
             { ViewBag.CategoryName = nameCategoryPressed; }
@@ -130,12 +136,12 @@
                Request.Params.Cast<string>().Where(p => p.StartsWith("btn")).Select(p => p.Substring("btn".Length)).First().Remove(0, 1);
             if (char.IsDigit(button[0]))  // If we Added a Product to the Cart
             {
+                ++CntAdd;
+                await CurrentOrDefaultUser(CurrentLocalUser);
                 var selectedProd = StaticTables.Products.FirstOrDefault(c => c.Code == button);
                 StaticTables.Carts = StaticTables.Carts.Where(u => u.UserId == CurrentLocalUser.UserId).ToList();
                 await CurrentOrDefaultUser(CurrentLocalUser);
                 PlaceOrder(selectedProd, CurrentLocalUser.UserId, db);
-                //await CheckFillOutTbl(StaticTables.Carts);
-                //var cartUpd = db.ReadCarts().Where(u => u.UserId == CurrentLocalUser.UserId).ToList();
                 { ViewBag.Cart = StaticTables.Carts; }
             }
             else if (button != null)     // If We pressed any Category button
@@ -143,7 +149,7 @@
                 isCategoryPressed = true;
                 isTopMenu = false;
                 StaticTables.Products = new List<ProductDto>();
-                StaticTables.Products =  db.ReadProducts();
+                StaticTables.Products = db.ReadProducts();
                 StaticTables.Categories = await db.ReadCategoriesAsync();
                 productsByCateg = StaticTables.Products.Where(p => p.CategoryId ==
                 StaticTables.Categories.FirstOrDefault(c => c.TagName == button).Id).ToList();
@@ -151,6 +157,8 @@
                 { nameCategoryPressed = StaticTables.Categories.FirstOrDefault(c => c.TagName == button).Name; }
             }
 
+            { ViewBag.IsModal = isModal; }
+            { ViewBag.ModalMsg = modalMsg; }
             { ViewBag.CurrentUser = CurrentLocalUser; }
             { ViewBag.CategoryName = nameCategoryPressed; }
             { ViewBag.RegistredUser = CurrentUserEmail; }
@@ -167,6 +175,14 @@
             return View(StaticTables.Products.ToPagedList(pageNumber, pageSize));
         }
 
+        public static string modalMsg = string.Empty;
+        static bool isModal = false;
+        public ActionResult CloseAlerts()
+        {
+            isModal = false;
+            return RedirectToAction("../Home/MainPage");
+        }
+
         public ActionResult Cart()
         {
             ViewBag.Cart = StaticTables.Carts.Where(u => u.UserId == CurrentLocalUser.UserId).ToList();
@@ -174,8 +190,20 @@
         }
 
         [HttpPost]
+        public ActionResult CartUpdate(CartDto cart)
+        {
+            try
+            {
+                db.Update(cart);
+            }
+            catch { }
+            return RedirectToAction("MainPage", "Home", new { isShopCart = "cart"});
+        }
+
+        [HttpPost]
         public ActionResult SendMessage(BLL.DTO.EmailEntity.EmailData mailInfo)
         {
+            isModal = true;
             mailInfo.SendingDate = DateTime.UtcNow;
             #region Old f-ty:
             //var param = string.Empty;
@@ -196,16 +224,17 @@
             //    return Json(new EmailSender(mailInfo, mailInfo.Body).SendMessage(MessageType.NewOrderHtmlBody, arr[0], "africanshoplviv@gmail.com"));
             //}
             #endregion
-            if (mailInfo.Message.Equals("MakeOrder")) 
+            if (mailInfo.Message.Equals("MakeOrder"))
             {
                 TotalSum = 0;
                 var arr = MakeOrderFile(mailInfo.UserName, mailInfo.Phone, mailInfo.Email);
                 var carts = StaticTables.Carts.Where(u => u.UserId == CurrentLocalUser.UserId).ToList();
                 var htmlB = CreateOrderBody(carts, mailInfo);
-                return Json(new EmailSender(mailInfo, htmlB)
-                    .SendMessage(MessageType.NewOrder, arr[0]));
-            }
-            return Json(new EmailSender(mailInfo).SendMessage(MessageType.WriteUs));
+                modalMsg = new EmailSender(mailInfo, htmlB).SendMessage(MessageType.NewOrder, arr[0]);
+                return RedirectToAction("../Home/MainPage");
+            }   
+            modalMsg = new EmailSender(mailInfo).SendMessage(MessageType.WriteUs);
+            return RedirectToAction("../Home/MainPage");
         }
 
         [HttpGet]
@@ -213,6 +242,7 @@
         {
             if (cartSelected != null)
             {
+                --CntAdd;
                 var cart = StaticTables.Carts.FirstOrDefault(i => i.Id == cartSelected);
                 TotalSum -= cart.ItemsPrice;
                 var id = int.Parse(cartSelected.ToString());
@@ -260,28 +290,28 @@
         {
             //if (table == null || table.Count() == 0)
             //{
-                switch (table.GetType().GetGenericArguments()[0].Name)
-                {
-                    case nameof(CategoryDto):
-                        StaticTables.Categories = await db.ReadCategoriesAsync();
-                        break;
-                    case nameof(ProductDto):
-                        StaticTables.Products = await db.ReadProductsAsync();
-                        break;
-                    case nameof(CartDto):
-                        var concreteCarts = await db.ReadCartsAsync();
+            switch (table.GetType().GetGenericArguments()[0].Name)
+            {
+                case nameof(CategoryDto):
+                    StaticTables.Categories = await db.ReadCategoriesAsync();
+                    break;
+                case nameof(ProductDto):
+                    StaticTables.Products = await db.ReadProductsAsync();
+                    break;
+                case nameof(CartDto):
+                    var concreteCarts = await db.ReadCartsAsync();
                     // Get cart only for Current user:
                     try
                     {
                         if (CurrentLocalUser == null) { }
-                            //CurrentLocalUser = await new Init().InitDefaultUser(UserManager, SignInManager);
+                        //CurrentLocalUser = await new Init().InitDefaultUser(UserManager, SignInManager);
                         else
-                        StaticTables.Carts = concreteCarts.Where(user => user.UserId == CurrentLocalUser.UserId).ToList();
+                            StaticTables.Carts = concreteCarts.Where(user => user.UserId == CurrentLocalUser.UserId).ToList();
                     }
                     catch { }
                     break;
-                }
-           // }
+            }
+            // }
         }
 
         private IEnumerable<string> FillVideoNames(string[] files, List<string[]> list)
@@ -294,7 +324,7 @@
             foreach (var l in list)
                 for (var i = 0; i < l.Length;)
                 {
-                    fNames.Add(l[1]);
+                    fNames.Add(l[l.Length - 1]);
                     break;
                 }
             return fNames;
@@ -425,7 +455,7 @@
       subHtml +
     "</table>" +
     "<div style = \"border: thin solid sandybrown; background-color: sandybrown;padding:8px\"> " +
-        $"<h2 style=\"text-align:right\">Tatal:&nbsp;&nbsp;{carts.Sum(a=>a.ItemsPrice)}.00 ГРН</h2>" +
+        $"<h2 style=\"text-align:right\">Tatal:&nbsp;&nbsp;{carts.Sum(a => a.ItemsPrice)}.00 ГРН</h2>" +
     "</div>" +
     "<div>" +
         "<h3 style = \"color:orange\"> Payment details</h3>" +

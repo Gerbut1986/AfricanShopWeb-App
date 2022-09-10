@@ -1,57 +1,13 @@
 ﻿@model PagedList.IPagedList<AfricanShopLviv.BLL.DTO.ProductDto>
 @using PagedList.Mvc;
-<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
 <link href="~/Content/prodList.css" rel="stylesheet" type="text/css" />
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" rel="stylesheet">
-<!-- SLIDER:  -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="~/Content/Slider.css" rel="stylesheet" />
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
 @{
     ViewBag.Title = "Main Page";
     Layout = "~/Views/Shared/MainLayout.cshtml";
-    <link href="~/Content/prodList.css" rel="stylesheet" />
 }
-
-
-<!-- BANNER: -->
-<div style="margin-top:10px" class="row">
-    <div class="col-md" style="background-color:black;width:100%;height:100%">
-
-        <div class="mySlides fade" style="min-height:100%;min-width:100%">
-            <img src="~/Images/Banner/1.jpeg" style="width:100%;height:100%">
-        </div>
-
-        <div class="mySlides fade">
-            <img src="~/Images/Banner/2.jpeg" style="width: 100%; height: 100%">
-        </div>
-
-        <div class="mySlides fade">
-            <img src="~/Images/Banner/3.jpeg" style="width: 100%; height: 100%">
-        </div>
-
-        <div class="mySlides fade" style="min-height:100%;min-width:100%">
-            <img src="~/Images/Banner/1.jpeg" style="width:100%;height:100%">
-        </div>
-
-        <div class="mySlides fade">
-            <img src="~/Images/Banner/2.jpeg" style="width: 100%; height: 100%">
-        </div>
-
-        <div class="mySlides fade">
-            <img src="~/Images/Banner/3.jpeg" style="width: 100%; height: 100%">
-        </div>
-    </div>
-    <br>
-
-    <div style="text-align:center">
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
-
-</div>
-
 
 @if (ViewBag.IsCart == true)
 {
@@ -61,10 +17,12 @@
 
 <!-- Modals form js 'Write Us' & 'Call Back' -->
 <div class="w3-container">
-    <div style="width:220px;margin:auto">
-        <button style="font-family: 'Palatino Linotype'; margin-top:3px" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Write Us</button>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <button style="font-family: 'Palatino Linotype'; margin-top: 3px" onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-black">Call Back</button>
+    <div class="row">
+        <div class="col" style="text-align:center">
+            <button style="font-family: 'Palatino Linotype'" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Write Us</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button style="font-family: 'Palatino Linotype'" onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-black">Call Back</button>
+        </div>
     </div>
     <div style="opacity:0.97" id="id01" class="w3-modal">
         <div class="w3-modal-content w3-animate-zoom w3-card-4">
@@ -139,6 +97,17 @@
         </div>
     </div>
 </div>
+
+@if (ViewBag.IsModal == true)
+{
+<div style="" class="alert alert-success alert-dismissible">
+    <a href="~/Home/CloseAlerts" class="close" data-dismiss="alert" style="text-decoration: none;text-align:right; font-size: large; color: #82822f"
+       aria-label="close">&times;</a>
+    <h4 style="text-align:center;color:brown;font-family:'Palatino Linotype';font-weight:bold">
+        @ViewBag.ModalMsg;
+    </h4>
+</div>
+}
 
 <!-- List of Categories: -->
 @using (Html.BeginForm("MainPage", "Home", FormMethod.Post))
@@ -310,53 +279,13 @@
                                 </div>
                             </div>
                         }
-                        @*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) from @Model.PageCount*@
+                        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) from @Model.PageCount
                         @Html.PagedListPager(Model, page => Url.Action("MainPage", new { page }))
                     </div>
                 </div>
             }
         </div>
     </div>
-
-    <!--
-        <div class="row" style="background-color:beige">
-
-        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-        <script defer src="//lk.easynetshop.ru/frontend/v5/test.js"></script>
-        <link href="//lk.easynetshop.ru/frontend/v5/test.css" rel="stylesheet">
-
-
-
-        <!-- Кнопка КУПИТЬ с ID товара из каталога корзины
-        <!--<button class="btn-ens-action btn-ens-style"
-                data-rel="4a9f99dc105">
-            Добавить товар по ID
-        </button>
-
-        <hr>
-
-        <!--<button class="btn-ens-self btn-ens-style"
-                data-name="Nibiru E58 WI-FI FPV"
-                data-price="5220.99"
-                data-desc="Радиоуправляемый дрон FPV c Wi-Fi"
-                data-href="https://easynetshop.ru/demo.html"
-                data-img="https://easynetshop.ru/assets/images/product_2.jpg">
-            Добавить произвольный товар
-        </button>
-        <style>
-            #enscart_image_wrapper {
-                background-color: #1170bb; /*Меняем цвет кнопки */
-            }
-
-            #enscart_wrapper {
-                top: auto;
-                right: auto;
-                left: 10px; /* Привязываем к левому краю */
-                bottom: 20px; /* Привязываем к нижнему краю */
-            }
-        </style>
-    </div>-->
-
 }
 
 
@@ -415,56 +344,4 @@
     }
 </style>
 
-<script>
-    let slideIndex = 1;
-    showSlides(slideIndex);
 
-    // Next/previous controls
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    // Thumbnail image controls
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-    }
-
-</script>
-
-<script>
-    let slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1 }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        setTimeout(showSlides, 2000); // Change image every 2 seconds
-    }
-</script>

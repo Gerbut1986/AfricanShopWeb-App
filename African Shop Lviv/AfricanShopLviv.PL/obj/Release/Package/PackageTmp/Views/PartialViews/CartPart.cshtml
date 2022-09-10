@@ -18,7 +18,7 @@
                 }
                 else
                 {
-                    <form action="~/Home/SendMessage" method="post" style="padding-top: 2px; padding-bottom: 2px ">
+                    <form action="~/Home/CartUpdate" method="post" style="padding-top: 2px; padding-bottom: 2px ">
                         <div class="modal-content">
                             <div class="modal-body" style="overflow:auto">
                                 <table class="table table-light table-hover" style="overflow:auto">
@@ -41,9 +41,9 @@
                                                     <img width="40" height="40" src="@Url.Content(photo)" onclick="document.getElementById('photo').style.display='block'"
                                                          class="" alt="Sheep" />
                                                 </td>
-                                                <td scope="row">@item.ProductName </td>
+                                                <td scope="row"><span name="prName">@item.ProductName</span></td>
                                                 <td scope="row"><span name="prc">@item.Price</span>  грн</td>
-                                                <td class="qty"><input type="number" id="product-quantity" name="quantity" min="1" max="999" value="1" /></td>
+                                                <td class="qty"><input type="number" id="product-quantity" name="product-quantity" min="1" max="999" value="1" /></td>
                                                 <td scope="row"><span name="total">@item.ItemsPrice</span> грн</td>
                                                 <td>
                                                     @Html.ActionLink("X", "DeleteItem", "Home", new { cartSelected = item.Id }, new { @class = "btn btn-danger btn - sm" })
@@ -62,20 +62,32 @@
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="document.getElementById('cart').style.display='none'">
                                     Close
                                 </button>
-                                @*@if (ViewBag.RegistredUser == null)
-                                {*@
-                                    <span onclick="document.getElementById('id01').style.display='block'"
+
+                                <span onclick="document.getElementById('id01').style.display='block'"
                                           class="btn btn-success">Checkout</span>
-                                @*}
-                                else
-                                {
-                                    <button type="submit" name="btn-registred" class="btn btn-success">Checkout</button>
-                                }*@
+                              
                             </div>
                         </div>
                     </form>
                 }
             </div>
+            <script>
+                $(":input").bind('keyup mouseup', function () {
+                    var prName = document.getElementById("prName");
+                    var quantity = document.getElementById("product-quantity");
+                    var comment = document.getElementById("comment");
+
+                    var CartDto = { prName: prName, quantity: product - quantity };
+                    $.ajax({
+                        contentType: 'application/json; charset=utf-8',
+                        dataType: 'json',
+                        type: 'POST',
+                        url: '/Home/CartUpdate',
+                        data: CartDto
+                    });
+                    alert("changed");
+                });
+            </script>
             <footer style="text-align:center" class="w3-container w3-teal">
                 <h5 style="font-family:'Palatino Linotype';font-weight:bold">MAOTS ent Best Buy Online</h5>
             </footer>
@@ -97,10 +109,7 @@
                         <input name="userName" style="margin-bottom:5px" type="text" class="form-control" placeholder="Your Name And Surname:" required />
                         <input name="email" style="margin-bottom:5px" type="email" class="form-control" placeholder="Your Email:" required />
                         <input name="phone" style="margin-bottom:5px" type="tel" class="form-control" placeholder="Your Phone:" required />
-                        <input name="comment" style="margin-bottom:5px" type="tel" class="form-control" placeholder="Delivery Address:" required />
-                        @*<div class="form-outline">
-                            <textarea name="comment" placeholder="Comments" class="form-control" rows="4" required></textarea>
-                        </div>*@
+                        <input name="comment" style="margin-bottom:5px" type="text" class="form-control" placeholder="Delivery Address:" required />
                         <br />
                         <div style="width:90px;margin:auto">
                             <input class="btn btn-primary" type="submit" value="Make Order" />
@@ -138,7 +147,7 @@
         <!-- For Quantity: -->
         <script>
             $(function () {
-                $('#product-quantity').on('keyup', function () {
+                $('#quantity').on('keyup', function () {
                     // if input value is changed, run the ajax call here
                     var qty = doc.getElementById("quantity").value;
                     var price = document.getElementById("prc").value;

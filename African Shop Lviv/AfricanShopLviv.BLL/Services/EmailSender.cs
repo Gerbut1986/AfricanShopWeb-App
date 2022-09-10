@@ -69,7 +69,7 @@
             switch (typeMsg)
             {
                 case MessageType.NewOrder:
-                    returnMsg = "Thank you for your order. We will contact you soon!";
+                    returnMsg = "Order received! Thank you so much for choosing us! Your order will be processed and you will be contacted.";
                     subject = $"Request for New Order {data.SendingDate}";
                     body = $"<h1 style='color:green;font-weight:bold'>Hello MAOTS ent Best Buy Online!</h1><br/>" +
                            $"<h2 style='color:green;font-weight:bold'>I'm '{data.UserName}'. I maked the following order.</h2><br/><br/>" +
@@ -86,7 +86,7 @@
                            $"<h4 style='color:darkred;font-weight:bold'>Best Regards, {data.UserName}.</h4>";
                     break;
                 case MessageType.AcceptToClient:
-                    returnMsg = "Thank you for your order! We sent you a message! Check it out!";
+                    returnMsg = "Order received! Thank you so much for choosing us! Your order will be processed and you will be contacted.";
                     subject = $"Your Order from AfricanShopLviv.com";
                     body = "<p><blockquote>Info 'bout your place Order!</blockquote><br/>" +
                             "<h2 style='colog:green;font-weight:bold;font-family:Palatino Linotype'>Thank you for your order, " +
@@ -99,7 +99,7 @@
                             "<h3 colog:violet;font-weight:bold>Tetyana Syrytsia-Okoye: 5363 5420 1653 2278</h3>";
                     break;
                 case MessageType.NewOrderHtmlBody:
-                    returnMsg = "Thank you for your order. We will contact you soon!";
+                    returnMsg = "Order received! Thank you so much for choosing us! Your order will be processed and you will be contacted.";
                     subject = $"Request for New Order {data.SendingDate}";
                     body = htmlBody;
                     break;

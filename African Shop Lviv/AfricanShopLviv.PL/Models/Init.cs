@@ -19,7 +19,7 @@
             var defaultId = rand.Next(4000, new Random().Next(6000, 9000));
             var cntUsrs = UserManager.Users.ToList().Count();
             var defaultPass = $"1qaz!QAZ{defaultId}-{rand.Next(1,10000)}".ToString();
-            var defaultEmail = $"defaultUser{cntUsrs + 1}@gmail.com";
+            var defaultEmail = $"Guest-{cntUsrs + 1}@gmail.com";
             var user = new ApplicationUser
             {
                 UserId = cntUsrs+1,

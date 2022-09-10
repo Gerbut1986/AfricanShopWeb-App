@@ -338,6 +338,7 @@
     <Content Include="Images\Contacts\closedoortop.jpg" />
     <Content Include="Images\Contacts\openeddoor.jpg" />
     <Content Include="Images\Contacts\openeddoortop.jpg" />
+    <Content Include="Images\delivery.png" />
     <Content Include="Images\grid4-dark\5-68f630102e.png" />
     <Content Include="Images\grid4-dark\bg2_ptrn-644db09c5b.jpg" />
     <Content Include="Images\img\44984929.nekp23aemt.W215.svg" />
@@ -347,6 +348,7 @@
     <Content Include="Images\img\backgroundImg0.3.png" />
     <Content Include="Images\img\bddd193aec782bd647dd9a85d240da24dac8ea2b.jpg" />
     <Content Include="Images\img\illusion.jpg" />
+    <Content Include="Images\payment.png" />
     <Content Include="Images\play-5df78d3d30.png" />
     <Content Include="Images\Products\A3 Lemon 4 Ever Bright Body Cream.jpeg" />
     <Content Include="Images\Products\Abiki Balm.jpg" />
