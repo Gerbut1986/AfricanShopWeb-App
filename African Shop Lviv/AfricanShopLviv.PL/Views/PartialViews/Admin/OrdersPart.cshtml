@@ -1,35 +1,75 @@
-﻿
-@{
+﻿@{
     var orders = ViewBag.Orders as List<AfricanShopLviv.BLL.DTO.OrderDto>;
+    var users = ViewBag.Users as List<AfricanShopLviv.PL.Models.ApplicationUser>;
 
     <table class="table table-dark table-hover">
         <thead>
             <tr style="text-align:center">
-                <th scope="col">Id</th>
-                <th scope="col">Имя</th>
-                <th scope="col">Фамилия</th>
-                <th scope="col">Отчество</th>
-                <th scope="col">Пол</th>
-                <th scope="col">Дата рождения</th>
-                <th scope="col">Телефон</th>
-                <th scope="col">E-mail</th>
-                <th scope="col">Страна</th>
+                <th scope="col">#</th>
+                <th scope="col">Client</th>
+                <th scope="col">Order Date</th>
+                <th scope="col">Products</th>
+                <th scope="col">Total</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var user in orders)
+            @foreach (var ord in orders)
             {
+                var shortTxtProp = ord.Products.Substring(0, 4);
+                if (ord.Products.Count() > 10)
+                {
+                    shortTxtProp = ord.Products.Substring(0, 26);
+                }
+                var modalId = ord.Id;
+                var user = users.FirstOrDefault(u => u.UserId == ord.UserId);
                 <tr style="text-align:center">
-                    <th scope="row">@user.UserId</th>
-                    <td>@user.LastName</td>
-                    <td>@user.FirstName</td>
-                    <td>@user.MiddleName</td>
-                    <td>@user.Gender</td>
-                    <td>@user.DateOfBirth</td>
-                    <td>@user.PhoneNumber</td>
-                    <td>@user.Email</td>
-                    <td>@user.Country</td>
+                    <th scope="row">@ord.Id</th>
+                    <th>@user.FirstName&nbsp;@user.LastName</th>
+                    <td>
+                        @ord.OrderDate
+                    </td>
+                    <td>
+                        <button onclick="document.getElementById('id0_@modalId').style.display = 'block'" class="btn btn-default">
+                            @shortTxtProp ...
+                        </button>
+                    </td>
+                    <td>@ord.TotalAmount UAH.</td>
                 </tr>
+
+                <!-- Message text details: -->
+                <div style="opacity:1;margin-top:66px" id="id0_@modalId" class="w3-modal">
+                    <div class="w3-modal-content w3-animate-zoom w3-card-4">
+                        <header class="w3-container w3-teal">
+                            <span onclick="document.getElementById('id0_@modalId').style.display='none'"
+                                  class="w3-button w3-display-topright">
+                                &times;
+                            </span> 
+                            <h2 style="text-align:center;font-family:'Palatino Linotype'">Ordered Products Details</h2>
+                        </header>
+                        <div class="w3-container">
+                            <form action="~/Home/SendMessage" method="post" style="">
+                                <div class="form-outline">
+                                    <textarea name="comment" placeholder="Comments"
+                                              class="form-control" rows="4" required>
+                                 @{ 
+                                     var split = ord.Products.Split(new char[] { ',' });
+                                  }
+                                  @foreach (var pr in split)
+                                  {
+                                    <Product> @pr </Product> 
+                                  }
+                                    </textarea>
+                                </div>
+                                <br />
+                            </form>
+                        </div>
+                        <footer style="text-align:center" class="w3-container w3-teal">
+                            <h5 style="font-family:'Palatino Linotype';font-weight:bold">
+                                MAOTS ent Best Buy Online
+                            </h5>
+                        </footer>
+                    </div>
+                </div>
             }
         </tbody>
     </table>

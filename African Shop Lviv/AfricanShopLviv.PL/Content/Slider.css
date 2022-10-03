@@ -81,3 +81,14 @@ img {
         font-size: 11px
     }
 }
+
+
+
+
+/* Navbar responsive: */
+@media screen and (max-width: 538px) {
+    #navbarCollapse #btn {
+
+        text-align: center;
+    }
+}

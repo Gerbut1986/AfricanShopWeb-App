@@ -1,1 +1,39 @@
 ﻿
+@{
+        var users = ViewBag.Users as List<AfricanShopLviv.PL.Models.ApplicationUser>;
+        var registered = users.Where(r => r.Role == "RegisterUser").ToList();
+        if (registered == null)
+        {
+         <h4 style="color:red;text-align:center">List of Registered Users is still Empty...</h4>
+        }
+        else
+        {
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr style="text-align:center">
+                    <th scope="col">#</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Date of Register</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">E-Mail</th>
+                    <th scope="col">Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in registered)
+                {
+                    <tr style="text-align:center">
+                        <th scope="row">@user.UserId</th>
+                        <td>@user.FirstName</td>
+                        <td>@user.LastName</td>
+                        <td>@user.DateRegister</td>
+                        <td>@user.PhoneNumber</td>
+                        <td>@user.Email</td>
+                        <td>@user.Role</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}

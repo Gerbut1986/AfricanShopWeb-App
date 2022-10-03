@@ -25,9 +25,9 @@
                 UserId = cntUsrs+1,
                 UserName = defaultEmail,
                 Email = defaultEmail,
-                PhoneNumber = $"Default Phone - {defaultId}",
-                LastName = $"Default Last Name - {defaultId}",
-                FirstName = $"Default First Name - {defaultId}",
+                PhoneNumber = $"none",
+                LastName = $"Guest - {defaultId}",
+                FirstName = $"Guest - {defaultId}",
                 Role = Role.Guest.ToString(),
                 DateRegister = DateTime.Now
             };

@@ -66,6 +66,7 @@
     <Compile Include="DTO\CartDto.cs" />
     <Compile Include="DTO\CategoryDto.cs" />
     <Compile Include="DTO\EmailEntity\EmailData.cs" />
+    <Compile Include="DTO\MessageDto.cs" />
     <Compile Include="DTO\OrderDto.cs" />
     <Compile Include="DTO\ProductDto.cs" />
     <Compile Include="Interfaces\IEmailEntity.cs" />
@@ -73,7 +74,7 @@
     <Compile Include="Interfaces\IModel.cs" />
     <Compile Include="Interfaces\IServiceAfricanShop.cs" />
     <Compile Include="Logger\Logger.cs" />
-    <Compile Include="PartialModels\Email\Credential.cs" />
+    <Compile Include="PartialModels\Email\Credentials.cs" />
     <Compile Include="PartialModels\Email\EmailData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\EmailSender.cs" />

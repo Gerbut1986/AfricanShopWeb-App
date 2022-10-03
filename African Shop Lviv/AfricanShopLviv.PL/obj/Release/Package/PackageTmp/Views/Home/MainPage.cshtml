@@ -3,6 +3,7 @@
 
 <link href="~/Content/prodList.css" rel="stylesheet" type="text/css" />
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" media="screen and (max-width: 600px)" href="~/Content/prodList.css">
 
 @{
     ViewBag.Title = "Main Page";
@@ -24,7 +25,7 @@
             <button style="font-family: 'Palatino Linotype'" onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-black">Call Back</button>
         </div>
     </div>
-    <div style="opacity:0.97" id="id01" class="w3-modal">
+    <div style="opacity:0.97;margin-top:66px" id="id01" class="w3-modal">
         <div class="w3-modal-content w3-animate-zoom w3-card-4">
             <header class="w3-container w3-teal">
                 <span onclick="document.getElementById('id01').style.display='none'"
@@ -70,7 +71,7 @@
             });
 });
     </script>
-    <div style="opacity:1.97" id="id02" class="w3-modal">
+    <div style="opacity: 1.97; margin-top: 50px" id="id02" class="w3-modal">
         <div class="w3-modal-content w3-animate-opacity w3-card-4">
             <header class="w3-container w3-teal">
                 <span onclick="document.getElementById('id02').style.display='none'"
@@ -100,13 +101,13 @@
 
 @if (ViewBag.IsModal == true)
 {
-<div style="" class="alert alert-success alert-dismissible">
-    <a href="~/Home/CloseAlerts" class="close" data-dismiss="alert" style="text-decoration: none;text-align:right; font-size: large; color: #82822f"
-       aria-label="close">&times;</a>
-    <h4 style="text-align:center;color:brown;font-family:'Palatino Linotype';font-weight:bold">
-        @ViewBag.ModalMsg;
-    </h4>
-</div>
+    <div style="" class="alert alert-success alert-dismissible">
+        <a href="~/Home/CloseAlerts" class="close" data-dismiss="alert" style="text-decoration: none;text-align:right; font-size: large; color: #82822f"
+           aria-label="close">&times;</a>
+        <h4 style="text-align:center;color:brown;font-family:'Palatino Linotype';font-weight:bold">
+            @ViewBag.ModalMsg
+        </h4>
+    </div>
 }
 
 <!-- List of Categories: -->
@@ -120,15 +121,25 @@
             <p style="font-weight:bold;font-family:'Palatino Linotype';font-size:xx-large">
                 <span style="opacity:0.5">38 (063)</span> 4392871
             </p>
-            <div class="d-flex" style="width: 100%" id="wrapper">
-                <div style="width: 100%" class="list-group list-group-item-heading">
-                    @Html.ActionLink("All Categories", "", "", new { param = "AllCategoryPart" }, new { id = "btnCateg", style = "background-color:black;color:red", @class = "btn btn-default" })
-                    @foreach (var item in ViewBag.Categories)
-                    {
-                        <button id="btnCateg" class="btn btn-default" name="btn-@item.TagName">
-                            @item.Name
-                        </button>
-                    }
+            <div class="col">
+                <button type="button" class="categToggle"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#categoryColase">
+                    Expand List Of Categories
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="categoryColase" style="text-align:center">
+                <div class="d-flex" style="width: 100%" id="wrapper">
+                    <div style="width: 100%" class="list-group list-group-item-heading">
+                        @Html.ActionLink("All Categories", "", "", new { param = "AllCategoryPart" }, new { id = "btnCateg", style = "background-color:black;color:red", @class = "btn btn-default" })
+                        @foreach (var item in ViewBag.Categories)
+                        {
+                            <button id="btnCateg" class="btn btn-default" name="btn-@item.TagName">
+                                @item.Name
+                            </button>
+                        }
+                    </div>
                 </div>
             </div>
 
@@ -141,9 +152,9 @@
             </div>
 
             <!-- Contacts: -->
-            <header>
+            <header style="">
                 <h3>
-                    <a style="font-weight:bold;font-family:'Times New Roman', Times, serif;font-size:larger;color:white" href="#">
+                    <a style="padding: 6px;font-weight:bold; font-family: 'Times New Roman', Times, serif; font-size: larger; color: saddlebrown" href="#">
                         Contacts
                     </a>
                 </h3>
@@ -218,74 +229,94 @@
                 </div>
                 <hr />
             </div>
+
+            <!-- Register Now gif: -->
+            @*<div style="border-radius:6px;width:100%" class="col-sm-3">
+            <hr />
+            <a href="/Account/Register">
+                <img src="@Url.Content("~/Images/registernow.gif")" width="100%" />
+            </a>
+            <hr />
+        </div>*@
+
+            <!-- Contact Us gif: -->
+            @*<div style="border-radius:6px;width:100%" class="col-sm-3">
+            <hr />
+            <a href="#"  onclick="document.getElementById('id01').style.display='block'">
+                <img src="@Url.Content("~/Images/contactus.gif")" width="100%" />
+            </a>
+            <hr />
+        </div>*@
         </div>
 
-        <!-- RIGHTSIDE BAR: List of the Products, Videos, Contacts, Payment e.t.c -->
-        <div class="col-sm-9" style="">
-            @*<div class="col" style="text-align:center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
-                    <p style="font-size:70px;font-family: 'Segoe Print';color:green"> African Shop Lviv,UA</p>
-                    <p style="font-size:70px;font-family: 'Segoe Print';color:red;margin-top:-45px"> Afro Market Ternopil </p>
-                    <p style="font-size: 70px; font-family: 'Segoe Print'; color: darkorange; margin-top: -45px"> Best Buy Online </p>
-                    <p style="font-size: 70px; font-family: 'Segoe Print'; color: springgreen; margin-top: -45px">SHOP WITH US!</p>
-                </div>*@
-            @if (ViewBag.TopMenu == true)
-            {
-                string p = "~/Views/PartialViews/" + ViewBag.PartialView + ".cshtml";
-                <div class="col">
-                    @Html.Partial(p)
-                </div>
-            }
-            else if (ViewBag.CategoryPressed == true)
-            {
-                <div class="col" style="background-image: src(../../Logo/paper.gif);padding:9px">
-                    <div class="row" style="background-image: linear-gradient(transparent, yellow, blue, transparent) ">
-                        <div style="background-color:whitesmoke;padding:9px;color:mediumvioletred;font-weight:bold;margin-top:-9px">
-                            <span style="font-family:'Palatino Linotype';font-size:large">
-                                CATEGORIES /
-                                <span style="color:darkorange;font-family:'Segoe Print'"> @ViewBag.CategoryName     </span>
-                            </span>
-                        </div>
-                        @foreach (var product in Model)
-                        {
-                            string Path = "~/Images/Products/" + product.Photo;
-                            <div class="col-md-3" style="margin-top:20px">
-                                <div class="card p-2">
-                                    <div class="text-center">
-                                        <img src="@Url.Content(Path)" width="100%" height="250" alt="Image is Not Opened" />
-                                    </div>
-                                    <div class="product-details" style="min-height:auto">
-                                        <span style="color:mediumblue;font-family:'Palatino Linotype';font-weight:bold" class="font-weight-bold d-block">@product.Price грн</span>
-                                        <div style="word-break: break-all;min-height:80px">@product.Name</div>
-                                        <div><small style="color:firebrick">Serial:&nbsp;@product.Code</small></div>
-                                        <div class="buttons d-flex flex-row">
-                                            <div style="width:20%" class="cart"><i class="fa fa-shopping-cart"></i></div>
-                                            <div style="">
-                                                <button style="width:100%" name="btn-@product.Code" class="btn btn-success cart-button btn-block">
-                                                    <span class="dot">1</span>Add to cart
-                                                </button>
-                                            </div>
+            <!-- RIGHTSIDE BAR: List of the Products, Videos, Contacts, Payment e.t.c -->
+            <div class="col-sm-9" style="">
+                @*<div class="col" style="text-align:center;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+                <p style="font-size:70px;font-family: 'Segoe Print';color:green"> African Shop Lviv,UA</p>
+                <p style="font-size:70px;font-family: 'Segoe Print';color:red;margin-top:-45px"> Afro Market Ternopil </p>
+                <p style="font-size: 70px; font-family: 'Segoe Print'; color: darkorange; margin-top: -45px"> Best Buy Online </p>
+                <p style="font-size: 70px; font-family: 'Segoe Print'; color: springgreen; margin-top: -45px">SHOP WITH US!</p>
+            </div>*@
+                @if (ViewBag.TopMenu == true)
+                {
+                    string p = "~/Views/PartialViews/" + ViewBag.PartialView + ".cshtml";
+                    <div class="col">
+                        @Html.Partial(p)
+                    </div>
+                }
+                else if (ViewBag.CategoryPressed == true)
+                {
+                    <div class="col" style="background-image: src(../../Logo/paper.gif)">
+                        <div class="row" style="background-image: linear-gradient(transparent, yellow, blue, transparent) ">
+                            <div style="background-color:whitesmoke;padding:9px;color:mediumvioletred;font-weight:bold">
+                                <span style="font-family:'Palatino Linotype';font-size:large">
+                                    CATEGORIES /
+                                    <span style="color:darkorange;font-family:'Segoe Print'"> @ViewBag.CategoryName     </span>
+                                </span>
+                            </div>
+                            @foreach (var product in Model)
+                            {
+                                string Path = "~/Images/Products/" + product.Photo;
+                                <div class="col-md-3" style="margin-top:20px">
+                                    <div class="card p-2 col" style="border:1px solid brown;text-align:center">
+                                        <div id="phto" style="height:300px;width:100%;border:1px solid silver">
+                                            <img src="@Url.Content(Path)"
+                                                 style="text-align:center;background-size:cover"
+                                                 width="100%" height="100%" alt="Image is Not Opened" />
                                         </div>
-                                        <div class="weight">
-                                            @if (product.IsStock == true)
-                                            {
-                                                <small style="color:green;font-weight:bold">In Stock</small>
-                                            }
-                                            else
-                                            {
-                                                <small style="color: red; font-weight: bold">Out of stock</small>
-                                            }
+                                        <div class="product-details" style="min-height:auto">
+                                            <span style="color:mediumblue;font-family:'Palatino Linotype';font-weight:bold" class="font-weight-bold d-block">@product.Price.ToString("c") грн</span>
+                                            <div style="word-break: break-all;min-height:80px">@product.Name</div>
+                                            <div><small style="color:firebrick">Serial:&nbsp;@product.Code</small></div>
+                                            <div class="buttons d-flex flex-row">
+                                                <div style="width:20%" class="cart"><i class="fa fa-shopping-cart"></i></div>
+                                                <div style="">
+                                                    <button style="width:100%" name="btn-@product.Code" class="btn btn-success cart-button btn-block">
+                                                        <span class="dot">1</span>Add to cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="weight">
+                                                @if (product.IsStock == true)
+                                                {
+                                                    <small style="color:green;font-weight:bold">In Stock</small>
+                                                }
+                                                else
+                                                {
+                                                    <small style="color: red; font-weight: bold">Out of stock</small>
+                                                }
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        }
-                        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) from @Model.PageCount
-                        @Html.PagedListPager(Model, page => Url.Action("MainPage", new { page }))
+                            }
+                            @*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) from @Model.PageCount*@
+                            @Html.PagedListPager(Model, page => Url.Action("MainPage", new { page }))
+                        </div>
                     </div>
-                </div>
-            }
+                }
+            </div>
         </div>
-    </div>
 }
 
 
@@ -309,7 +340,21 @@
     #l5::marker {
         content: url(../../Logo/Icons/whatsapp.svg);
     }
-
+    .categToggle {
+        border: 3px solid brown;
+        color:gold;
+        width: 100%;
+        font-family:'Palatino Linotype';
+        font-weight:bold;
+        font-size:large;
+        background-color:brown;
+        border-radius:3px
+    }
+        .categToggle:hover {
+            background-color: black;
+            border: 3px solid black;
+            color: lightgoldenrodyellow;
+        }
     #btnCateg {
         /*   border: 2px solid darkorange;*/
         font-family: Verdana, Geneva, Tahoma, sans-serif, Times, serif;

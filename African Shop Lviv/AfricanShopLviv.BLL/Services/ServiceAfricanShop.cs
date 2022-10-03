@@ -9,14 +9,17 @@
     using System.Collections.Generic;
     using AfricanShopLviv.DAL.Entities;
     using AfricanShopLviv.DAL.Interfaces;
+    using System.Data.SqlClient;
 
     public class ServiceAfricanShop : IServiceAfricanShop
     {
         readonly IUnitOfWork Db;
+        private string connectStrCpy;
 
         #region Constructor:
         public ServiceAfricanShop(string strConn)
         {
+            connectStrCpy = strConn;
             Db = new UnitOfWork(strConn);
         }
         #endregion
@@ -264,13 +267,14 @@
             {
                 var model = new Category
                 {
+                    Id = dto.Id,
                     Name = dto.Name,
                     TagName = dto.TagName,
                     Photo = dto.Photo
                 };
                 Db.Categories.Update(model);
             }
-            catch { throw new Exception($"Method - '{nameof(Update)}({dto.GetType().Name})'"); }
+            catch(Exception ex) { throw new Exception($"Method - '{nameof(Update)}({dto.GetType().Name})'"); }
         }
 
         public void DeleteCategory(int id)
@@ -353,6 +357,126 @@
             try
             {
                 Db.Orders.Delete(id);
+            }
+            catch { throw new Exception($"Method - '{nameof(DeleteOrder)}({id})'"); }
+        }
+        #endregion
+
+        #region Message Service:
+        public void Insert(MessageDto dto)
+        {
+            try
+            {
+                var model = new Message
+                {
+                    DateMessage = dto.DateMessage,
+                    IsReviwed = dto.IsReviwed,
+                    RecipientId = dto.RecipientId,
+                    SenderId = dto.SenderId,
+                    TextMessage = dto.TextMessage,
+                    Title = dto.Title,
+                    TypeMessage = dto.TypeMessage
+                };
+                Db.Messages.Create(model);
+            }
+            catch { throw new Exception($"Method - '{nameof(Insert)}({dto.GetType().Name})'"); }
+        }
+
+        public IEnumerable<MessageDto> ReadMessages()
+        {
+            var list = Db.Messages.GetAll().ToList();
+            var listDTO = new List<MessageDto>();
+            for (int i = 0; i < list.Count; i++)
+            {
+                listDTO.Add(new MessageDto());
+                listDTO[i].Id = list[i].Id;
+                listDTO[i].DateMessage = list[i].DateMessage;
+                listDTO[i].IsReviwed = list[i].IsReviwed;
+                listDTO[i].RecipientId = list[i].RecipientId;
+                listDTO[i].SenderId = list[i].SenderId;
+                listDTO[i].TextMessage = list[i].TextMessage;
+                listDTO[i].Title = list[i].Title;
+                listDTO[i].TypeMessage = list[i].TypeMessage;
+            }
+            return listDTO;
+        }
+
+        public async Task<List<MessageDto>> ReadMessagesAsync()
+        {
+            var list = await Db.Messages.GetAllAsync();
+            var listDTO = new List<MessageDto>();
+            for (int i = 0; i < list.Count; i++)
+            {
+                listDTO.Add(new MessageDto());
+                listDTO[i].Id = list[i].Id;
+                listDTO[i].DateMessage = list[i].DateMessage;
+                listDTO[i].IsReviwed = list[i].IsReviwed;
+                listDTO[i].RecipientId = list[i].RecipientId;
+                listDTO[i].SenderId = list[i].SenderId;
+                listDTO[i].TextMessage = list[i].TextMessage;
+                listDTO[i].Title = list[i].Title;
+                listDTO[i].TypeMessage = list[i].TypeMessage;
+            }
+            return listDTO;
+        }
+
+        public void Update(MessageDto dto)
+        {
+            //
+            try
+            {
+                var model = new Message
+                {
+                    Id = dto.Id,
+                    DateMessage = dto.DateMessage,
+                    IsReviwed = dto.IsReviwed,
+                    RecipientId = dto.RecipientId,
+                    SenderId = dto.SenderId,
+                    TextMessage = dto.TextMessage,
+                    Title = dto.Title,
+                    TypeMessage = dto.TypeMessage
+                };
+                Db.Messages.UpdateAsync(model.Id);
+            }
+            catch(Exception ex)
+            {
+                // {
+                // "Attaching an entity of type 'AfricanShopLviv.DAL.Entities.Message'
+                // failed because another entity of the same type already has the same primary key value.
+                // This can happen when using the 'Attach' method or setting the state of an entity
+                // to 'Unchanged' or 'Modified' if any entities in the graph have conflicting key values.
+                // This may be because some entities are new and have not yet received database-generated key values.
+                // In this case use the 'Add' method or the 'Added' entity state to track the graph and then
+                // set the state of non-new entities to 'Unchanged' or 'Modified' as appropriate."
+                // }
+                throw new Exception($"Method - '{nameof(Insert)}({dto.GetType().Name})'");
+            }
+        }
+
+        public string UpdateADO(MessageDto msg)
+        {
+            string qwery = $"update messages set IsReviwed=@IsReviwed where Id={msg.Id}";
+            using (var conn = new SqlConnection(connectStrCpy)) 
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(qwery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IsReviwed", msg.IsReviwed);
+                    try
+                    {
+                        var res = cmd.ExecuteNonQuery();
+                        return res == 1 ? "Update Success!" : "Something went wrong...";
+                    }
+                    catch(Exception ex) { return ex.Message; }
+                }
+            }
+        }
+
+        public void DeleteMessage(int id)
+        {
+            try
+            {
+                Db.Messages.Delete(id);
             }
             catch { throw new Exception($"Method - '{nameof(DeleteOrder)}({id})'"); }
         }

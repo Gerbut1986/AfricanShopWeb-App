@@ -37,5 +37,13 @@
         void Update(OrderDto model);
         void DeleteOrder(int id);
         #endregion
+
+        #region Message Service:
+        void Insert(MessageDto model);
+        IEnumerable<MessageDto> ReadMessages();
+        Task<List<MessageDto>> ReadMessagesAsync();
+        void Update(MessageDto model);
+        void DeleteMessage(int id);
+        #endregion
     }
 }

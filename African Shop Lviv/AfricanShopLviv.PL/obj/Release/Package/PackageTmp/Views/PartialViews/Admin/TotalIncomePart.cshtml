@@ -1,0 +1,41 @@
+﻿
+@{
+    var allOrders = ViewBag.Orders as List<AfricanShopLviv.BLL.DTO.OrderDto>;
+    var listUser = (List<AfricanShopLviv.PL.Models.ApplicationUser>)ViewBag.Users;
+
+    if (allOrders == null || allOrders.Count == 0)
+    {
+        <h4 style="text-align:center;color:red">
+            Still haven't no one order...
+        </h4>
+    }
+    else
+    {
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr style="text-align:center">
+                    <th scope="col">#</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Order Date</th>
+                    <th scope="col">Total Amount</th>
+                    <th scope="col">Products</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in allOrders)
+                {
+                    <tr style="text-align:center">
+                        <th>@order.Id</th>
+                        <th scope="row">
+                            @listUser.FirstOrDefault(u => u.UserId == order.UserId)
+                        </th>
+                        <td>@order.OrderDate</td>
+                        <td>@order.TotalAmount</td>
+                        <td>@order.Products</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+

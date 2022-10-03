@@ -1,5 +1,12 @@
 ﻿/* List of Products */
 @import url('prodList.css');
+
+@media only screen and (max-width: 600px) {
+    #phto {
+        height:750px;
+    }
+}
+
 .wrapper {
     margin-top: 30px;
 }

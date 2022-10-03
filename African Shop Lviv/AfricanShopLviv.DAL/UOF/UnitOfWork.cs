@@ -12,6 +12,7 @@
         #region All Repos:    
         CartRepository cartRepo;
         OrderRepository orderRepo;
+        MessageRepository messageRepo;
         ProductRepository productRepo;
         CategoryRepository categoryRepo;
         #endregion
@@ -55,6 +56,16 @@
                 if (orderRepo == null)
                     orderRepo = new OrderRepository(db);
                 return orderRepo;
+            }
+        }
+
+        public IRepository<Message> Messages
+        {
+            get
+            {
+                if (messageRepo == null)
+                    messageRepo = new MessageRepository(db);
+                return messageRepo;
             }
         }
 

@@ -14,8 +14,9 @@
     {
         private readonly EmailData data;
         private readonly string htmlBody;
+        private AlternateView htmlView = null;
 
-        public EmailSender(EmailData data, string htmlBody = null) 
+        public EmailSender(EmailData data, string htmlBody = null)
         {
             this.htmlBody = htmlBody; this.data = data;
         }
@@ -26,25 +27,28 @@
             {
                 // [0] - returnMsg, [1] - subject, [2] - body
                 var param = htmlBody == null ? GetConcreteMsg(msgType).ToList() : GetConcreteMsg(msgType, htmlBody).ToList();
-                var recepient = ownerRecepient != null ? ownerRecepient : "africanshoplviv@gmail.com"; 
+                var recepient = ownerRecepient != null ? ownerRecepient : "africanshoplviv@gmail.com";
                 MailAddress from = new MailAddress(data.Email, data.UserName);
                 MailAddress to = new MailAddress(recepient); // email to admin
-                MailMessage m = new MailMessage(from, to); 
+                MailMessage m = new MailMessage(from, to);
                 m.IsBodyHtml = true;
                 m.Subject = param[1];
-                AlternateView htmlView =
-                AlternateView.CreateAlternateViewFromString(htmlBody, System.Text.Encoding.UTF8, "text/html");
-                m.AlternateViews.Add(htmlView); // And a html attachment to make sure.
-                m.Body = htmlBody;
+                if (htmlBody != null)
+                {
+                    htmlView =
+                   AlternateView.CreateAlternateViewFromString(htmlBody, System.Text.Encoding.UTF8, "text/html");
+                    m.AlternateViews.Add(htmlView); // And a html attachment to make sure.
+                    m.Body = htmlBody;
+                }
                 if (attachFile != null)
                     m.Attachments.Add(Attach(attachFile));
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-                smtp.Credentials = new System.Net.NetworkCredential(Credential.Mail, Credential.Pass);
+                smtp.Credentials = new System.Net.NetworkCredential(Credentials.Mail, Credentials.Pass);
                 smtp.EnableSsl = true;
                 smtp.Send(m);
                 return param[0];
             }
-            catch(System.Exception ex)
+            catch (System.Exception ex)
             {
                 return ex.Message;// + " | " + ex.StackTrace;
             }

@@ -5,38 +5,38 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\ANDRE\Documents\Tania Mark\Publish (africanshopukraine.com)</_PublishTargetUrl>
-    <History>True|2022-09-08T11:37:34.6978158Z;True|2022-09-08T11:32:33.1916444+03:00;True|2022-09-07T20:28:27.7906633+03:00;True|2022-09-07T19:58:10.6052351+03:00;True|2022-09-06T16:38:31.3851969+03:00;True|2022-09-04T13:52:57.2913764+03:00;True|2022-09-03T19:39:37.5080384+03:00;</History>
+    <History>True|2022-10-03T10:25:18.2081683Z;True|2022-09-29T23:38:09.5336322+03:00;True|2022-09-26T21:20:29.3109985+03:00;False|2022-09-26T21:17:17.3919708+03:00;True|2022-09-26T20:39:58.9507064+03:00;False|2022-09-26T20:37:18.0295481+03:00;False|2022-09-26T20:30:52.8453150+03:00;False|2022-09-26T20:13:45.4339764+03:00;True|2022-09-12T20:26:59.7280661+03:00;True|2022-09-12T14:25:54.2661515+03:00;True|2022-09-12T00:17:02.3656587+03:00;True|2022-09-08T14:37:34.6978158+03:00;True|2022-09-08T11:32:33.1916444+03:00;True|2022-09-07T20:28:27.7906633+03:00;True|2022-09-07T19:58:10.6052351+03:00;True|2022-09-06T16:38:31.3851969+03:00;True|2022-09-04T13:52:57.2913764+03:00;True|2022-09-03T19:39:37.5080384+03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/AfricanShopLviv.BLL.dll">
-      <publishTime>09/08/2022 11:31:51</publishTime>
+      <publishTime>10/03/2022 13:23:57</publishTime>
     </File>
     <File Include="bin/AfricanShopLviv.BLL.dll.config">
       <publishTime>08/17/2022 01:38:47</publishTime>
     </File>
     <File Include="bin/AfricanShopLviv.BLL.pdb">
-      <publishTime>09/08/2022 11:31:51</publishTime>
+      <publishTime>10/03/2022 13:23:57</publishTime>
     </File>
     <File Include="bin/AfricanShopLviv.DAL.dll">
-      <publishTime>09/03/2022 19:38:46</publishTime>
+      <publishTime>09/26/2022 20:13:22</publishTime>
     </File>
     <File Include="bin/AfricanShopLviv.DAL.dll.config">
       <publishTime>08/17/2022 01:38:44</publishTime>
     </File>
     <File Include="bin/AfricanShopLviv.DAL.pdb">
-      <publishTime>09/03/2022 19:38:46</publishTime>
+      <publishTime>09/26/2022 20:13:22</publishTime>
     </File>
     <File Include="bin/AfricanShopLviv.PL.dll">
-      <publishTime>09/08/2022 16:14:29</publishTime>
+      <publishTime>10/03/2022 13:24:04</publishTime>
     </File>
     <File Include="bin/AfricanShopLviv.PL.pdb">
-      <publishTime>09/08/2022 16:14:29</publishTime>
+      <publishTime>10/03/2022 13:24:04</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
-      <publishTime>09/10/2013 16:29:20</publishTime>
+      <publishTime>10/09/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.pdb">
-      <publishTime>09/10/2013 16:29:20</publishTime>
+      <publishTime>10/09/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>04/16/2020 23:38:42</publishTime>
@@ -54,37 +54,37 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>11/25/2019 09:57:50</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
-      <publishTime>07/09/2020 00:52:58</publishTime>
+      <publishTime>09/07/2020 00:52:58</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.dll">
-      <publishTime>05/11/2022 02:31:20</publishTime>
+      <publishTime>11/05/2022 02:31:20</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
-      <publishTime>05/11/2022 02:31:40</publishTime>
+      <publishTime>11/05/2022 02:31:40</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
-      <publishTime>05/11/2022 02:31:50</publishTime>
+      <publishTime>11/05/2022 02:31:50</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.dll">
-      <publishTime>05/11/2022 02:31:38</publishTime>
+      <publishTime>11/05/2022 02:31:38</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
-      <publishTime>05/11/2022 02:31:50</publishTime>
+      <publishTime>11/05/2022 02:31:50</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Google.dll">
-      <publishTime>05/11/2022 02:31:50</publishTime>
+      <publishTime>11/05/2022 02:31:50</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
-      <publishTime>05/11/2022 02:31:48</publishTime>
+      <publishTime>11/05/2022 02:31:48</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
-      <publishTime>05/11/2022 02:31:50</publishTime>
+      <publishTime>11/05/2022 02:31:50</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
-      <publishTime>05/11/2022 02:31:48</publishTime>
+      <publishTime>11/05/2022 02:31:48</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>04/11/2022 22:09:46</publishTime>
+      <publishTime>11/04/2022 22:09:46</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>03/17/2021 22:03:36</publishTime>
@@ -138,10 +138,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/19/2020 04:40:20</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
-      <publishTime>12/05/2017 03:36:44</publishTime>
+      <publishTime>05/12/2017 03:36:44</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
-      <publishTime>12/05/2017 03:36:44</publishTime>
+      <publishTime>05/12/2017 03:36:44</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.Managed.Core.targets">
       <publishTime>05/19/2020 04:40:20</publishTime>
@@ -195,7 +195,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/28/2022 02:42:20</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
-      <publishTime>02/11/2014 14:26:04</publishTime>
+      <publishTime>11/02/2014 14:26:04</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
       <publishTime>05/28/2022 02:42:06</publishTime>
@@ -214,6 +214,348 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="Content/AdminCss.css">
       <publishTime>08/17/2022 14:19:12</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/config/.eslintrc.json">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/config/postcss.config.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/config/rollup.config.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/js/AdminLTE.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/js/CardRefresh.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/js/CardWidget.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/js/ControlSidebar.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/js/DirectChat.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/js/Dropdown.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/js/ExpandableTable.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/js/Fullscreen.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/js/IFrame.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/js/Layout.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/js/NavbarSearch.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/js/PushMenu.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/js/SidebarSearch.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/js/Toasts.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/js/TodoList.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/js/Treeview.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/npm/.eslintrc.json">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/npm/DocsPlugins.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/npm/DocsPublish.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/npm/Plugins.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/npm/Publish.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/npm/vnu-jar.js">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/adminlte.scss">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/mixins/_accent.scss">
+      <publishTime>02/08/2022 23:06:08</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/mixins/_animations.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/mixins/_backgrounds.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/mixins/_cards.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/mixins/_custom-forms.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/mixins/_dark-mode.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/mixins/_direct-chat.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/mixins/_miscellaneous.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/mixins/_navbar.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/mixins/_scrollbar.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/mixins/_sidebar.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/mixins/_toasts.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/mixins/_touch-support.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/pages/_404_500_errors.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/pages/_e-commerce.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/pages/_iframe.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/pages/_invoice.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/pages/_kanban.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/pages/_lockscreen.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/pages/_login_and_register.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/pages/_mailbox.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/pages/_profile.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/pages/_projects.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/parts/adminlte.components.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/parts/adminlte.core.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/parts/adminlte.extra-components.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/parts/adminlte.light.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/parts/adminlte.pages.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/parts/adminlte.plugins.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/parts/_components.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/parts/_core.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/parts/_extra-components.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/parts/_miscellaneous.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/parts/_pages.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/parts/_plugins.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/plugins/_bootstrap-slider.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/plugins/_bootstrap-switch.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/plugins/_daterangepicker.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/plugins/_fullcalendar.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/plugins/_icheck-bootstrap.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/plugins/_jqvmap.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/plugins/_mapael.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/plugins/_miscellaneous.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/plugins/_mixins.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/plugins/_pace.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/plugins/_select2.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/plugins/_sweetalert2.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/plugins/_toastr.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_adminlte.raw.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_alerts.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_animation-effects.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_bootstrap-variables.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_brand.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_buttons.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_callout.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_cards.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_carousel.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_close.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_colors.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_control-sidebar.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_direct-chat.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_dropdown.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_elevation.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_forms.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_info-box.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_layout.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_main-header.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_main-sidebar.scss">
+      <publishTime>02/08/2022 23:06:09</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_miscellaneous.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_mixins.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_modals.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_navs.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_pagination.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_preloader.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_print.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_products.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_progress-bars.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_root.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_sidebar-mini.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_small-box.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_social-widgets.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_table.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_text.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_timeline.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_toasts.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_users-list.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_variables-alt.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/build/scss/_variables.scss">
+      <publishTime>02/08/2022 23:06:10</publishTime>
     </File>
     <File Include="Content/AdminPanel/dist/css/adminlte.min.css">
       <publishTime>08/18/2022 14:22:05</publishTime>
@@ -277,6 +619,699 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="Content/AdminPanel/dist/js/pages/dashboard3.js">
       <publishTime>08/18/2022 14:22:06</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/404.html">
+      <publishTime>02/08/2022 23:06:12</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/additional-styles.md">
+      <publishTime>02/08/2022 23:06:12</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/adminlte.css">
+      <publishTime>02/08/2022 23:06:12</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/adminlte.css.map">
+      <publishTime>02/08/2022 23:06:13</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/adminlte.min.css">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/adminlte.min.css.map">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.components.css">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.components.css.map">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.components.min.css">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.components.min.css.map">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.core.css">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.core.css.map">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.core.min.css">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.core.min.css.map">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.extra-components.css">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.extra-components.css.map">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.extra-components.min.css">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.extra-components.min.css.map">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.light.css">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.light.css.map">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.light.min.css">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.light.min.css.map">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.pages.css">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.pages.css.map">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.pages.min.css">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.pages.min.css.map">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.plugins.css">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.plugins.css.map">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.plugins.min.css">
+      <publishTime>02/08/2022 23:06:14</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/alt/adminlte.plugins.min.css.map">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/docs.css">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/css/highlighter.css">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/img/AdminLTELogo.png">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/img/logo-xl.png">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/img/logo-xs.png">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/img/user1-128x128.jpg">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/img/user3-128x128.jpg">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/img/user4-128x128.jpg">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/img/user5-128x128.jpg">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/img/user6-128x128.jpg">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/img/user7-128x128.jpg">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/img/user8-128x128.jpg">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/js/adminlte.js">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/js/adminlte.js.map">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/js/adminlte.min.js">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/js/adminlte.min.js.map">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/js/demo.js">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/js/pages/dashboard.js">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/js/pages/dashboard2.js">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/js/pages/dashboard3.js">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/bootstrap/js/bootstrap.bundle.js">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/bootstrap/js/bootstrap.bundle.js.map">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/bootstrap/js/bootstrap.bundle.min.js">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/bootstrap/js/bootstrap.bundle.min.js.map">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/bootstrap/js/bootstrap.js">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/bootstrap/js/bootstrap.js.map">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/bootstrap/js/bootstrap.min.js">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/bootstrap/js/bootstrap.min.js.map">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/css/all.css">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/css/all.min.css">
+      <publishTime>02/08/2022 23:06:15</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/css/brands.css">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/css/brands.min.css">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/css/fontawesome.css">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/css/fontawesome.min.css">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/css/regular.css">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/css/regular.min.css">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/css/solid.css">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/css/solid.min.css">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/css/svg-with-js.css">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/css/svg-with-js.min.css">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/css/v4-shims.css">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/css/v4-shims.min.css">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.eot">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.svg">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.ttf">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.woff">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/webfonts/fa-brands-400.woff2">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.eot">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.svg">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.ttf">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.woff">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/webfonts/fa-regular-400.woff2">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.eot">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.svg">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.ttf">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.woff">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/fontawesome-free/webfonts/fa-solid-900.woff2">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/jquery/jquery.js">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/jquery/jquery.min.js">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/jquery/jquery.min.map">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/jquery/jquery.slim.js">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/jquery/jquery.slim.min.js">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/jquery/jquery.slim.min.map">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/overlayScrollbars/css/OverlayScrollbars.css">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.js">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/overlayScrollbars/js/OverlayScrollbars.js">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/overlayScrollbars/js/OverlayScrollbars.min.js">
+      <publishTime>02/08/2022 23:06:16</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/esm/popper-utils.js">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/esm/popper-utils.js.map">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/esm/popper-utils.min.js">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/esm/popper-utils.min.js.map">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/esm/popper.js">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/esm/popper.js.map">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/esm/popper.min.js">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/esm/popper.min.js.map">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/popper-utils.js">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/popper-utils.js.map">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/popper-utils.min.js">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/popper-utils.min.js.map">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/popper.js">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/popper.js.map">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/popper.min.js">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/popper.min.js.map">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/umd/popper-utils.js">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/umd/popper-utils.js.map">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/umd/popper-utils.min.js">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/umd/popper-utils.min.js.map">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/umd/popper.js">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/umd/popper.js.flow">
+      <publishTime>02/08/2022 23:06:17</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/umd/popper.js.map">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/umd/popper.min.js">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/assets/plugins/popper/umd/popper.min.js.map">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/browser-support.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/components/boxes.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/components/cards.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/components/control-sidebar.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/components/direct-chat.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/components/main-header.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/components/main-sidebar.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/components/miscellaneous.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/components/plugins.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/components/ribbons.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/components/timeline.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/dependencies.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/faq.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/Gemfile">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/Gemfile.lock">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/how-to-contribute.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/implementations.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/index.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/javascript/card-refresh.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/javascript/card-widget.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/javascript/control-sidebar.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/javascript/direct-chat.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/javascript/expandable-tables.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/javascript/iframe.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/javascript/layout.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/javascript/navbar-search.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/javascript/push-menu.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/javascript/sidebar-search.md">
+      <publishTime>02/08/2022 23:06:18</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/javascript/toasts.md">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/javascript/todo-list.md">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/javascript/treeview.md">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/layout.md">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/license.md">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/upgrade-guide.md">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/_config.yml">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/_includes/foot.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/_includes/footer.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/_includes/head.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/_includes/navbar.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/_includes/preloader.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/_includes/sidebar.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/_layouts/default.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/docs/_layouts/page.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/calendar.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/charts/chartjs.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/charts/flot.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/charts/inline.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/charts/uplot.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/404.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/500.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/blank.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/contact-us.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/contacts.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/e-commerce.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/faq.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/forgot-password-v2.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/forgot-password.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/invoice-print.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/invoice.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/language-menu.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/legacy-user-menu.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/lockscreen.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/login-v2.html">
+      <publishTime>02/08/2022 23:06:19</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/login.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/pace.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/profile.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/project-add.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/project-detail.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/project-edit.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/projects.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/recover-password-v2.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/recover-password.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/register-v2.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/examples/register.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/forms/advanced.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/forms/editors.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/forms/general.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/forms/validation.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/gallery.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/kanban.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/layout/boxed.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/layout/collapsed-sidebar.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/layout/fixed-footer.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/layout/fixed-sidebar-custom.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/layout/fixed-sidebar.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/layout/fixed-topnav.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/layout/top-nav-sidebar.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/layout/top-nav.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/mailbox/compose.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/mailbox/mailbox.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/mailbox/read-mail.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/search/enhanced-results.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/search/enhanced.html">
+      <publishTime>02/08/2022 23:06:20</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/search/simple-results.html">
+      <publishTime>02/08/2022 23:06:21</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/search/simple.html">
+      <publishTime>02/08/2022 23:06:21</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/tables/data.html">
+      <publishTime>02/08/2022 23:06:21</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/tables/jsgrid.html">
+      <publishTime>02/08/2022 23:06:21</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/tables/simple.html">
+      <publishTime>02/08/2022 23:06:21</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/UI/buttons.html">
+      <publishTime>02/08/2022 23:06:21</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/UI/general.html">
+      <publishTime>02/08/2022 23:06:21</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/UI/icons.html">
+      <publishTime>02/08/2022 23:06:21</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/UI/modals.html">
+      <publishTime>02/08/2022 23:06:21</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/UI/navbar.html">
+      <publishTime>02/08/2022 23:06:21</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/UI/ribbons.html">
+      <publishTime>02/08/2022 23:06:21</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/UI/sliders.html">
+      <publishTime>02/08/2022 23:06:21</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/UI/timeline.html">
+      <publishTime>02/08/2022 23:06:21</publishTime>
+    </File>
+    <File Include="Content/AdminPanel/pages/widgets.html">
+      <publishTime>02/08/2022 23:06:21</publishTime>
     </File>
     <File Include="Content/AdminPanel/plugins/bootstrap/js/bootstrap.bundle.js">
       <publishTime>08/18/2022 14:22:04</publishTime>
@@ -903,7 +1938,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/17/2022 13:46:19</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css">
-      <publishTime>09/08/2022 15:30:49</publishTime>
+      <publishTime>08/09/2022 15:30:49</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css.map">
       <publishTime>08/17/2022 13:46:18</publishTime>
@@ -923,20 +1958,32 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Content/cartstyle.css">
       <publishTime>08/17/2022 14:19:12</publishTime>
     </File>
+    <File Include="Content/css/site-22f582f076.css">
+      <publishTime>06/20/2022 11:23:54</publishTime>
+    </File>
+    <File Include="Content/css/styles-36ab8bce7b.css">
+      <publishTime>06/20/2022 11:23:54</publishTime>
+    </File>
+    <File Include="Content/css/styles.css">
+      <publishTime>06/20/2022 11:23:54</publishTime>
+    </File>
+    <File Include="Content/css/themes-dark/styles-36ab8bce7b.css">
+      <publishTime>06/20/2022 11:23:54</publishTime>
+    </File>
     <File Include="Content/PagedList.css">
       <publishTime>08/17/2022 13:42:11</publishTime>
     </File>
     <File Include="Content/prodList.css">
-      <publishTime>08/17/2022 14:19:12</publishTime>
+      <publishTime>09/18/2022 15:12:14</publishTime>
     </File>
     <File Include="Content/Site.css">
       <publishTime>08/17/2022 13:36:31</publishTime>
     </File>
     <File Include="Content/Slider.css">
-      <publishTime>08/24/2022 18:24:43</publishTime>
+      <publishTime>09/10/2022 13:25:17</publishTime>
     </File>
     <File Include="favicon.ico">
-      <publishTime>09/04/2022 09:25:51</publishTime>
+      <publishTime>04/09/2022 09:25:51</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>08/17/2022 13:36:31</publishTime>
@@ -962,65 +2009,68 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Images/Banner/7.jpeg">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
+    <File Include="Images/Categories/attachment.jpg">
+      <publishTime>09/18/2022 20:20:14</publishTime>
+    </File>
     <File Include="Images/Categories/attachment.png">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/26/2022 20:36:01</publishTime>
     </File>
     <File Include="Images/Categories/bodycare.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/25/2022 14:39:41</publishTime>
     </File>
     <File Include="Images/Categories/bodycreamloti.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/19/2022 00:38:27</publishTime>
     </File>
     <File Include="Images/Categories/bodyoilsecum.jpeg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/26/2022 20:38:11</publishTime>
     </File>
     <File Include="Images/Categories/bodysoap.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/18/2022 20:21:17</publishTime>
     </File>
     <File Include="Images/Categories/drinkandbeverage.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/19/2022 00:09:32</publishTime>
     </File>
     <File Include="Images/Categories/dryfishleaves.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/18/2022 22:52:10</publishTime>
     </File>
     <File Include="Images/Categories/facialcream.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/18/2022 22:59:25</publishTime>
     </File>
     <File Include="Images/Categories/freshboss.png">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Images/Categories/freshvegetables.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/18/2022 23:08:30</publishTime>
     </File>
     <File Include="Images/Categories/frozenmeat.jpg">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Images/Categories/gainandflour.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/18/2022 22:54:09</publishTime>
     </File>
     <File Include="Images/Categories/haircare.png">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/26/2022 20:38:46</publishTime>
     </File>
     <File Include="Images/Categories/indomienoodles.jpg">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/18/2022 22:56:17</publishTime>
     </File>
     <File Include="Images/Categories/madeinindia.png">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>09/26/2022 20:39:06</publishTime>
     </File>
     <File Include="Images/Categories/other.jpg">
       <publishTime>08/17/2022 13:39:01</publishTime>
     </File>
     <File Include="Images/Categories/palmoil.jpg">
-      <publishTime>08/17/2022 13:39:01</publishTime>
+      <publishTime>09/18/2022 22:58:13</publishTime>
     </File>
     <File Include="Images/Categories/snacksanddeserts.jpg">
-      <publishTime>08/17/2022 13:39:01</publishTime>
+      <publishTime>09/19/2022 00:24:20</publishTime>
     </File>
     <File Include="Images/Categories/spicescooking.jpg">
-      <publishTime>08/17/2022 13:39:01</publishTime>
+      <publishTime>09/18/2022 22:49:11</publishTime>
     </File>
     <File Include="Images/Categories/tinfishandmeat.jpg">
-      <publishTime>08/17/2022 13:39:01</publishTime>
+      <publishTime>09/18/2022 22:40:37</publishTime>
     </File>
     <File Include="Images/Contacts/8874wi5l1sg8gss4s4sc4c88owkcc8 %281%29.jpeg">
       <publishTime>08/17/2022 13:39:01</publishTime>
@@ -1484,20 +2534,23 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/Account/_ExternalLoginsListPartial.cshtml">
       <publishTime>08/17/2022 13:39:59</publishTime>
     </File>
+    <File Include="Views/Admin/admin.cshtml">
+      <publishTime>09/12/2022 00:07:57</publishTime>
+    </File>
     <File Include="Views/Admin/_829528a_441d_484m_862i_22475963ffdn.cshtml">
-      <publishTime>08/18/2022 15:40:02</publishTime>
+      <publishTime>09/26/2022 20:09:21</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>08/17/2022 13:39:59</publishTime>
     </File>
     <File Include="Views/Home/Cart.cshtml">
-      <publishTime>09/04/2022 10:53:24</publishTime>
+      <publishTime>04/09/2022 10:53:24</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>08/17/2022 13:39:59</publishTime>
     </File>
     <File Include="Views/Home/MainPage.cshtml">
-      <publishTime>09/08/2022 15:55:24</publishTime>
+      <publishTime>09/29/2022 23:20:55</publishTime>
     </File>
     <File Include="Views/Manage/AddPhoneNumber.cshtml">
       <publishTime>08/17/2022 13:39:59</publishTime>
@@ -1517,8 +2570,17 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/Manage/VerifyPhoneNumber.cshtml">
       <publishTime>08/17/2022 13:39:59</publishTime>
     </File>
+    <File Include="Views/PartialViews/Admin/AddCategoryPart.cshtml">
+      <publishTime>09/26/2022 15:30:11</publishTime>
+    </File>
     <File Include="Views/PartialViews/Admin/AddProductPart.cshtml">
       <publishTime>08/17/2022 13:39:59</publishTime>
+    </File>
+    <File Include="Views/PartialViews/Admin/CategoryPart.cshtml">
+      <publishTime>09/26/2022 13:39:10</publishTime>
+    </File>
+    <File Include="Views/PartialViews/Admin/Edit/EditCategoryPart.cshtml">
+      <publishTime>09/26/2022 15:15:54</publishTime>
     </File>
     <File Include="Views/PartialViews/Admin/Edit/EditProductPart.cshtml">
       <publishTime>08/17/2022 13:39:59</publishTime>
@@ -1527,43 +2589,49 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/17/2022 13:39:59</publishTime>
     </File>
     <File Include="Views/PartialViews/Admin/MessagesPart.cshtml">
-      <publishTime>08/17/2022 13:39:59</publishTime>
+      <publishTime>09/26/2022 21:08:19</publishTime>
+    </File>
+    <File Include="Views/PartialViews/Admin/MyDataPaty.cshtml">
+      <publishTime>08/17/2022 02:14:25</publishTime>
     </File>
     <File Include="Views/PartialViews/Admin/NewPersonsPart.cshtml">
-      <publishTime>08/17/2022 13:39:59</publishTime>
+      <publishTime>09/12/2022 16:34:01</publishTime>
     </File>
     <File Include="Views/PartialViews/Admin/OrdersPart.cshtml">
-      <publishTime>08/17/2022 13:39:59</publishTime>
+      <publishTime>09/27/2022 14:59:52</publishTime>
     </File>
     <File Include="Views/PartialViews/Admin/ProductsPart.cshtml">
-      <publishTime>08/18/2022 02:22:48</publishTime>
+      <publishTime>09/27/2022 00:33:19</publishTime>
+    </File>
+    <File Include="Views/PartialViews/Admin/TotalIncomePart.cshtml">
+      <publishTime>09/12/2022 13:30:44</publishTime>
     </File>
     <File Include="Views/PartialViews/Admin/UserInfoPart.cshtml">
-      <publishTime>08/17/2022 13:39:59</publishTime>
+      <publishTime>09/12/2022 12:38:49</publishTime>
     </File>
     <File Include="Views/PartialViews/AllCategoryPart.cshtml">
-      <publishTime>09/03/2022 20:30:02</publishTime>
+      <publishTime>09/18/2022 19:46:51</publishTime>
     </File>
     <File Include="Views/PartialViews/CartPart.cshtml">
-      <publishTime>05/09/2022 17:54:03</publishTime>
+      <publishTime>09/18/2022 19:59:49</publishTime>
     </File>
     <File Include="Views/PartialViews/ContactPart.cshtml">
-      <publishTime>08/17/2022 13:39:59</publishTime>
+      <publishTime>09/18/2022 19:56:39</publishTime>
     </File>
     <File Include="Views/PartialViews/DeliveryPart.cshtml">
-      <publishTime>08/09/2022 14:35:33</publishTime>
+      <publishTime>09/10/2022 13:45:57</publishTime>
     </File>
     <File Include="Views/PartialViews/PaymentsPart.cshtml">
-      <publishTime>08/09/2022 14:35:19</publishTime>
+      <publishTime>09/08/2022 14:35:19</publishTime>
     </File>
     <File Include="Views/PartialViews/PersonDataPart.cshtml">
-      <publishTime>08/18/2022 01:35:17</publishTime>
+      <publishTime>09/12/2022 12:38:57</publishTime>
     </File>
     <File Include="Views/PartialViews/ProductsPart.cshtml">
       <publishTime>08/18/2022 02:26:44</publishTime>
     </File>
     <File Include="Views/PartialViews/VideosPart.cshtml">
-      <publishTime>08/18/2022 14:40:05</publishTime>
+      <publishTime>09/18/2022 19:02:50</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>08/17/2022 13:39:59</publishTime>
@@ -1572,13 +2640,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/17/2022 13:39:59</publishTime>
     </File>
     <File Include="Views/Shared/MainLayout.cshtml">
-      <publishTime>09/08/2022 16:00:17</publishTime>
+      <publishTime>09/27/2022 20:07:58</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>08/17/2022 13:39:59</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
-      <publishTime>05/09/2022 18:05:00</publishTime>
+      <publishTime>09/05/2022 18:05:00</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -1587,7 +2655,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/03/2022 19:38:58</publishTime>
+      <publishTime>03/09/2022 19:38:58</publishTime>
     </File>
   </ItemGroup>
 </Project>

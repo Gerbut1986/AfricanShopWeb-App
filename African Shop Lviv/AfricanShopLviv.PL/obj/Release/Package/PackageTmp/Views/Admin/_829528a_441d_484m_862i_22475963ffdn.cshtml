@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>African Shop - Admin Page</title>
+    <title>Admin Page - AFRICAN SHOP</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -20,6 +20,13 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="~/Content/AdminPanel/dist/css/adminlte.min.css">
 </head>
+
+@{ 
+    var messages = ViewBag.Messages as List<AfricanShopLviv.BLL.DTO.MessageDto>;
+    var users = ViewBag.Users as List<AfricanShopLviv.PL.Models.ApplicationUser>;
+    var currentMessages = messages.OrderByDescending(d => d.DateMessage);// as List<AfricanShopLviv.BLL.DTO.MessageDto>;
+}
+
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
 
@@ -47,7 +54,7 @@
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Navbar Search -->
-                <li class="nav-item">
+                @*<li class="nav-item">
                     <a class="nav-link" data-widget="navbar-search" href="#" role="button">
                         <i class="fas fa-search"></i>
                     </a>
@@ -66,93 +73,80 @@
                             </div>
                         </form>
                     </div>
-                </li>
+                </li>*@
 
                 <!-- Messages Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-comments"></i>
-                        <span class="badge badge-danger navbar-badge">3</span>
+                        <span class="badge badge-danger navbar-badge">@messages.Count</span>
                     </a>
+                    @{
+                        var cnt = 4; // will be shown only 3 fresh messages
+                        if (ViewBag.IsShownAllMsg == true)
+                        {
+                            cnt = messages.Count + 1;
+                        }
+                    }
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="~/Content/AdminPanel/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        Brad Diesel
-                                        <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">Call me whenever you can...</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                        @foreach (var msg in currentMessages)
+                        {
+                            --cnt;
+                            if (cnt == 0)
+                            {
+                                break;
+                            }
+                            var sender = users.FirstOrDefault(u => u.UserId == msg.SenderId);
+                            <a href="/Admin/_829528a_441d_484m_862i_22475963ffdn?isPartView=true" class="dropdown-item">
+                                <!-- Message Start -->
+                                <div class="media" style="width:300px">
+                                    <img src="~/Content/AdminPanel/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                                    <div class="media-body">
+                                        <h3 class="dropdown-item-title">
+                                            @if (sender.Role == "Guest")
+                                            {
+                                                <span>@sender.FirstName</span>
+                                            }
+                                            else
+                                            {
+                                                <span>@sender.FirstName&nbsp;@sender.LastName</span>
+                                            }
+
+                                            @if (!msg.IsReviwed) // if message not reviewed
+                                            {
+                                                <span class=" text-sm text-warning"><i class="fas fa-star"></i></span>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-sm text-danger"><i class="fas fa-star"></i></span>
+                                            }
+                                        </h3>
+                                        <p class="text-sm">@msg.Title...</p>
+                                        @{
+                                            TimeSpan diff = DateTime.Now - msg.DateMessage;
+                                            var leftHours = (int)diff.TotalHours;
+                                        }
+                                        <p class="text-sm text-muted">
+                                            <i class="far fa-clock mr-1">
+                                            </i>@leftHours Hours Ago
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="~/Content/AdminPanel/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        John Pierce
-                                        <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">I got your message bro</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="~/Content/AdminPanel/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        Nora Silvester
-                                        <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">The subject goes here</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+                                <!-- Message End -->
+                            </a>
+                            <div class="dropdown-divider"></div>
+                        }
+
+                        @if (ViewBag.IsShownAllMsg == false)
+                        {
+                            <a href="/Admin/_829528a_441d_484m_862i_22475963ffdn?isShowMsg=true" 
+                               class="dropdown-item dropdown-footer">
+                                See All Messages
+                            </a>
+                        }
                     </div>
                 </li>
-                <!-- Notifications Dropdown Menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="far fa-bell"></i>
-                        <span class="badge badge-warning navbar-badge">15</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-item dropdown-header">15 Notifications</span>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-envelope mr-2"></i> 4 new messages
-                            <span class="float-right text-muted text-sm">3 mins</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-users mr-2"></i> 8 friend requests
-                            <span class="float-right text-muted text-sm">12 hours</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-file mr-2"></i> 3 new reports
-                            <span class="float-right text-muted text-sm">2 days</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-                    </div>
-                </li>
+    
                 <li class="nav-item">
                     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                         <i class="fas fa-expand-arrows-alt"></i>
@@ -169,7 +163,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
+            <a href="/Home/MainPage" target="_blank" class="brand-link">
                 <img src="~/Content/AdminPanel/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">African Shop Lviv</span>
             </a>
@@ -214,7 +208,6 @@ new { isPartView = "true", partViewName = "UsersInfoPart" }, new { @class = "nav
                         </li>
                         @{
                             var categtories = ViewBag.Categories as List<AfricanShopLviv.BLL.DTO.CategoryDto>;
-
                         }
                         <li class="nav-item">
                             <p>
@@ -261,61 +254,61 @@ new { isPartView = "true", partViewName = "ProductsPart", categId = @c.Id }, new
                                 </div>
                             </p>
                             <!--<ul class="nav nav-treeview">
-                                using (Html.BeginForm())
-                                {
-                                    <li class="nav-item">
-                                        <div class="nav-item" style="display: inline-block; width: 50px; margin-left: 10px;text-align:center">
-                                            <i class="far fa-comments nav-icon"></i>
-                                        </div>
-                                        <div style="display: inline-block; margin-left: 10px">
-                                            <button type="submit" name="btn-income" id="msgType" class="nav-link">-->
+        using (Html.BeginForm())
+        {
+            <li class="nav-item">
+                <div class="nav-item" style="display: inline-block; width: 50px; margin-left: 10px;text-align:center">
+                    <i class="far fa-comments nav-icon"></i>
+                </div>
+                <div style="display: inline-block; margin-left: 10px">
+                    <button type="submit" name="btn-income" id="msgType" class="nav-link">-->
                             @*Входящие – @ViewBag.Messages.Count*@
                             <!--</button>
-                                    </div>
-                                </li>
-                                <li class="nav-item" style="margin-top:5px">
-                                    <div class="nav-item" style="display: inline-block; width: 50px; margin-left: 10px;text-align:center">
-                                        <i class="far fa-comment-dots nav-icon"></i>
-                                    </div>
-                                    <div style="display: inline-block; margin-left: 10px">
-                                        <button type="submit" name="btn-notresponse" id="msgType" class="nav-link">
-                                            Не отвечено – 222
-                                        </button>
-                                    </div>
-                                </li>
-                            }
-                            <li class="nav-item" style="margin-top:5px">
-                                <div class="nav-item" style="display: inline-block; width: 50px; margin-left: 10px;text-align:center">
-                                    <i class="far fa-comment-alt nav-icon"></i>
-                                </div>
-                                <div style="display: inline-block; margin-left: 10px">
-                                    <button type="submit" name="btn-prostrocheno" id="msgType" class="nav-link">
-                                        Просрочено – 23
-                                    </button>
-                                </div>
-                            </li>-->
+                </div>
+            </li>
+            <li class="nav-item" style="margin-top:5px">
+                <div class="nav-item" style="display: inline-block; width: 50px; margin-left: 10px;text-align:center">
+                    <i class="far fa-comment-dots nav-icon"></i>
+                </div>
+                <div style="display: inline-block; margin-left: 10px">
+                    <button type="submit" name="btn-notresponse" id="msgType" class="nav-link">
+                        Не отвечено – 222
+                    </button>
+                </div>
+            </li>
+        }
+        <li class="nav-item" style="margin-top:5px">
+            <div class="nav-item" style="display: inline-block; width: 50px; margin-left: 10px;text-align:center">
+                <i class="far fa-comment-alt nav-icon"></i>
+            </div>
+            <div style="display: inline-block; margin-left: 10px">
+                <button type="submit" name="btn-prostrocheno" id="msgType" class="nav-link">
+                    Просрочено – 23
+                </button>
+            </div>
+        </li>-->
                             <!-- Sending message f-ty: -->
                             <!--<li style="margin-top:5px" class="nav-item">
-                                    <div class="nav-item" style="display: inline-block; width: 50px; margin-left: 10px;text-align:center">
-                                        <i class="nav-icon fas fa-edit"></i>
-                                    </div>
-                                    <div style="display: inline-block; margin-left: 10px">
-                                        <button onclick="document.getElementById('send-one').style.display='block'" id="msgType" class="nav-link">
-                                            Написать
-                                        </button>
-                                    </div>
-                                </li>
-                                <li style="margin-top:5px" class="nav-item">
-                                    <div class="nav-item" style="display: inline-block; width: 50px; margin-left: 10px; text-align: center">
-                                        <i class="nav-icon fas fa-table"></i>
-                                    </div>
-                                    <div style="display: inline-block; margin-left: 10px">
-                                        <button onclick="document.getElementById('send-mult').style.display='block'" id="msgType" class="nav-link">
-                                            Написать всем
-                                        </button>
-                                    </div>
-                                </li>
-                            </ul>-->
+                <div class="nav-item" style="display: inline-block; width: 50px; margin-left: 10px;text-align:center">
+                    <i class="nav-icon fas fa-edit"></i>
+                </div>
+                <div style="display: inline-block; margin-left: 10px">
+                    <button onclick="document.getElementById('send-one').style.display='block'" id="msgType" class="nav-link">
+                        Написать
+                    </button>
+                </div>
+            </li>
+            <li style="margin-top:5px" class="nav-item">
+                <div class="nav-item" style="display: inline-block; width: 50px; margin-left: 10px; text-align: center">
+                    <i class="nav-icon fas fa-table"></i>
+                </div>
+                <div style="display: inline-block; margin-left: 10px">
+                    <button onclick="document.getElementById('send-mult').style.display='block'" id="msgType" class="nav-link">
+                        Написать всем
+                    </button>
+                </div>
+            </li>
+        </ul>-->
                         </li>
 
 
@@ -323,22 +316,14 @@ new { isPartView = "true", partViewName = "ProductsPart", categId = @c.Id }, new
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="fas fa-circle nav-icon"></i>
-                                <p>Footer</p>
+                                <p>Categories</p>
                                 <i class="right fas fa-angle-left"></i>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Set main text</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>
-                                            Change background color
-                                        </p>
+                                        @Html.ActionLink("Show All Categories", "_829528a_441d_484m_862i_22475963ffdn", "admin",
+new { isPartView = "true", partViewName = "CategoryPart" }, new { @class = "nav-link", id = "msgType" })
                                     </a>
                                 </li>
                             </ul>
@@ -372,24 +357,39 @@ new { isPartView = "true", partViewName = "ProductsPart", categId = @c.Id }, new
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="fas fa-circle nav-icon"></i>
-                                <p>Background Image</p>
+                                <p>Background</p>
                                 <i class="right fas fa-angle-left"></i>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Set item</p>
+                                        <p>Set Background Image</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>
-                                            item
+                                            Set Background Color
                                         </p>
                                     </a>
                                 </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-circle nav-icon"></i>
+                                <p>Footer</p>
+                                <i class="right fas fa-angle-left"></i>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Set main text</p>
+                                    </a>
+                                </li>                              
                             </ul>
                         </li>
                     </ul>
@@ -405,59 +405,64 @@ new { isPartView = "true", partViewName = "ProductsPart", categId = @c.Id }, new
                     <div class="row">
                         <div class="clearfix hidden-md-up"></div>
                         @{
-                            var orders = ViewBag.TotalOrders as List<AfricanShopLviv.BLL.DTO.OrderDto>;
+                            var allOrders = ViewBag.Orders as List<AfricanShopLviv.BLL.DTO.OrderDto>;
+                            var allOrds = allOrders == null ? 0 : allOrders.Count;
+                            var totalIncm = allOrders == null ? 0 : allOrders.Sum(t => t.TotalAmount);
+                            var registered = ViewBag.Users as List<AfricanShopLviv.PL.Models.ApplicationUser>;
+                            var regCnt = registered.Where(r => r.Role == "RegisterUser").ToList();
+                            var regUserCnt = regCnt == null ? 0 : regCnt.Count;
                         }
                                 <div class="col-12 col-sm-6 col-md-3">
-                                    <button href="#" id="sels" class="info-box mb-3">
+                                    <a href="/Admin/SelectPartView?type=TotalIncomePart" id="sels" class="info-box mb-3">
                                         <span class="info-box-icon bg-success elevation-1"><i class="fas fa-money-bill"></i></span>
 
-                                        <div class="info-box-content">
+                                        <div class="info-box-content" style="text-align:center">
                                             <span type="submit" name="btn-AllOrders" class="info-box-text">All orders</span>
-                                            <span class="info-box-number">@orders.Count</span>
-                                        </div>
-                                    </button>
-                                </div>
-
-                                <div class="col-12 col-sm-6 col-md-3">
-                                    <div id="sels" class="info-box mb-3">
-                                        <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-dollar-sign"></i></span>
-
-                                        <div class="info-box-content">
-                                            <span class="info-box-text">Total income</span>
-                                            <span class="info-box-number"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-sm-6 col-md-3">
-                                    <a href="/Admin/SelectPartView?type=NewPersons" id="sels" class="info-box mb-3">
-                                        <span class="info-box-icon  elevation-1" style="background-color:yellow">
-                                            <i class="fas fa-users"></i>
-                                        </span>
-
-                                        <div class="info-box-content">
-                                            <span class="info-box-text">New persons</span>
-                                            <span class="info-box-number"> </span>
+                                            <span class="info-box-number">@allOrds</span>
                                         </div>
                                     </a>
                                 </div>
 
                                 <div class="col-12 col-sm-6 col-md-3">
-                                    <div id="sels" class="info-box mb-3">
+                                    <a href="#" id="sels" class="info-box mb-3">
+                                        <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-dollar-sign"></i></span>
+
+                                        <div class="info-box-content" style="text-align:center">
+                                            <span class="info-box-text">Total income</span>
+                                            <span class="info-box-number">@totalIncm&nbsp;UAH</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-12 col-sm-6 col-md-3">
+                                    <a href="/Admin/SelectPartView?type=NewPersonsPart" id="sels" class="info-box mb-3">
+                                        <span class="info-box-icon  elevation-1" style="background-color:yellow">
+                                            <i class="fas fa-users"></i>
+                                        </span>
+
+                                        <div class="info-box-content" style="text-align:center">
+                                            <span class="info-box-text" >Registered users</span>
+                                            <span class="info-box-number">@regUserCnt</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-12 col-sm-6 col-md-3">
+                                    <a href="/Admin/SelectPartView?type=MessagesPart"  id="sels" class="info-box mb-3">
                                         <span style="background-color:gold" class="info-box-icon  elevation-1">
                                             <i style="color:white" class="far fa-comment light"></i>
                                         </span>
 
-                                        <div class="info-box-content">
+                                        <div class="info-box-content" style="text-align:center">
                                             <span class="info-box-text">Messages</span>
-                                            <span class="info-box-number"></span>
+                                            <span class="info-box-number">@messages.Count</span>
                                         </div>
                                         <!-- /.info-box-content -->
-                                    </div>
+                                    </a>
                                     <!-- /.info-box -->
                                 </div>
-                            }
-                        }
+                            @*}
+                        }*@
                         <div class="col-md-12">
                             @if (@ViewBag.IsMsgRes == true)
                             {
@@ -510,7 +515,7 @@ new { isPartView = "true", partViewName = "ProductsPart", categId = @c.Id }, new
                                                         @Html.Partial("~/Views/PartialViews/Admin/UserInfoPart.cshtml")
                                                     </div>
                                                 }
-                                                else if (ViewBag.PartialView == AfricanShopLviv.PL.Controllers.ViewPartType.AllOrdersPart.ToString())
+                                                else if (ViewBag.PartialView == AfricanShopLviv.PL.Controllers.ViewPartType.TotalIncomePart.ToString())
                                                 {
                                                     <div style="overflow: auto; width: 100% ">
                                                         @Html.Partial("~/Views/PartialViews/Admin/OrdersPart.cshtml")
@@ -528,6 +533,12 @@ new { isPartView = "true", partViewName = "ProductsPart", categId = @c.Id }, new
                                                         @Html.Partial("~/Views/PartialViews/Admin/MessagesPart.cshtml")
                                                     </div>
                                                 }
+                                                else if (ViewBag.PartialView == AfricanShopLviv.PL.Controllers.ViewPartType.CategoryPart.ToString())
+                                                {
+                                                    <div style="overflow: auto;width:100%">
+                                                        @Html.Partial("~/Views/PartialViews/Admin/CategoryPart.cshtml")
+                                                    </div>
+                                                }
                                                 else if (ViewBag.PartialView == AfricanShopLviv.PL.Controllers.ViewPartType.ProductsPart.ToString())
                                                 {
                                                     <div style="overflow: auto;width:100%">
@@ -540,10 +551,28 @@ new { isPartView = "true", partViewName = "ProductsPart", categId = @c.Id }, new
                                                         @Html.Partial("~/Views/PartialViews/Admin/AddProductPart.cshtml")
                                                     </div>
                                                 }
+                                                else if (ViewBag.PartialView == AfricanShopLviv.PL.Controllers.ViewPartType.AddCategoryPart.ToString())
+                                                {
+                                                    <div style="overflow: auto; width: 100% ">
+                                                        @Html.Partial("~/Views/PartialViews/Admin/AddCategoryPart.cshtml")
+                                                    </div>
+                                                }
                                                 else if (ViewBag.PartialView == AfricanShopLviv.PL.Controllers.ViewPartType.EditProductPart.ToString())
                                                 {
                                                     <div style="overflow: auto; width: 100% ">
                                                         @Html.Partial("~/Views/PartialViews/Admin/Edit/EditProductPart.cshtml")
+                                                    </div>
+                                                }
+                                                else if (ViewBag.PartialView == AfricanShopLviv.PL.Controllers.ViewPartType.EditCategoryPart.ToString())
+                                                {
+                                                    <div style="overflow: auto; width: 100% ">
+                                                        @Html.Partial("~/Views/PartialViews/Admin/Edit/EditCategoryPart.cshtml")
+                                                    </div>
+                                                }
+                                                else if (ViewBag.PartialView == AfricanShopLviv.PL.Controllers.ViewPartType.MessagesPart.ToString())
+                                                {
+                                                    <div style="overflow: auto; width: 100% ">
+                                                        @Html.Partial("~/Views/PartialViews/Admin/MessagesPart.cshtml")
                                                     </div>
                                                 }
                                             }
@@ -551,9 +580,9 @@ new { isPartView = "true", partViewName = "ProductsPart", categId = @c.Id }, new
                                     </div>
                                 }
                             </div>
+
                             <!-- Main row -->
                             <div class="row">
-
                                 <div class="row">
                                     <div class="col-md-6">
 
@@ -564,6 +593,7 @@ new { isPartView = "true", partViewName = "ProductsPart", categId = @c.Id }, new
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-md-4">
 
                             </div>
@@ -581,7 +611,7 @@ new { isPartView = "true", partViewName = "ProductsPart", categId = @c.Id }, new
         <!-- /.control-sidebar -->
         <!-- Main Footer -->
         <footer style="text-align:center" class="main-footer">
-            <strong>Copyright &copy; 2022 <a href="https://adminlte.io">Админ панель - @ViewBag.AdminName</a>.</strong>
+            <strong>Copyright &copy; 2022 <a href="#">Admin Panel - @ViewBag.AdminName</a>.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Version</b> 3.2.0
@@ -598,7 +628,6 @@ new { isPartView = "true", partViewName = "ProductsPart", categId = @c.Id }, new
     <script src="~/Content/AdminPanel/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
     <script src="~/Content/AdminPanel/dist/js/adminlte.js"></script>
-
     <!-- PAGE PLUGINS -->
     <!-- jQuery Mapael -->
     <script src="~/Content/AdminPanel/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
@@ -607,7 +636,6 @@ new { isPartView = "true", partViewName = "ProductsPart", categId = @c.Id }, new
     <script src="~/Content/AdminPanel/plugins/jquery-mapael/maps/usa_states.min.js"></script>
     <!-- ChartJS -->
     <script src="~/Content/AdminPanel/plugins/chart.js/Chart.min.js"></script>
-
     <!-- AdminLTE for demo purposes -->
     <script src="~/Content/AdminPanel/dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->

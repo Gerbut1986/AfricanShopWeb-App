@@ -45,6 +45,7 @@
         public void Update(Category entity)
         {
             db.Entry(entity).State = EntityState.Modified;
+            var res = db.SaveChanges();
         }
 
         public async Task UpdateAsync(int id)

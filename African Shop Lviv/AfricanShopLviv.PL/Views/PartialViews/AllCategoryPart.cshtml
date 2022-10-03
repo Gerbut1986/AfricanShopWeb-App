@@ -3,14 +3,29 @@
     List<AfricanShopLviv.BLL.DTO.CategoryDto> categories = ViewBag.Categories;
 
 
-    <div class="row" style="padding:9px">
+    <div class="row" style="">
         <div style="background-color:whitesmoke;padding:9px;color:mediumvioletred;font-weight:bold">
             <span style="font-family:'Palatino Linotype';font-size:large">All Categories</span>
         </div>
         @foreach (var category in categories)
         {
-            <div id="photoBorder" class="col-md-4">
-       
+    <div class="col-3" style="margin-top: 9px; text-align: center;">
+        <button id="btnCateg" 
+             class="movie-btn widscreen-btn col btn btn-default" 
+             name="btn-@category.TagName" 
+                style="text-align:center;width:100%">
+            <div style="height:40px;width:50px;margin:auto;text-align:center">
+                <img class="movie-btn widscreen-btn" height="100%" width="100%" 
+                  style="" src="~/Images/Categories/@category.Photo" />
+            </div>
+            <div style="height:40px;width:100%; font-size:xx-small">
+                <span id="name">@category.Name</span>
+            </div>
+        </button>
+        @*<video poster="~/Images/play-5df78d3d30.png" class="movie-btn widscreen-btn" width="100%" vidUrl="~/Videos/@video">
+        </video>*@
+    </div>
+            @*<div id="photoBorder" style="text-align:center" class="col-md-4">
                 <button id="btnCateg" class="btn btn-default" name="btn-@category.TagName">
                     <div style="width:200px;height:50px">
                         <span id="name">@category.Name</span>
@@ -19,7 +34,7 @@
                         <img class="movie-btn widscreen-btn" height="100%" width="100%" src="~/Images/Categories/@category.Photo" />
                     </div>
                 </button>
-            </div>
+            </div>*@
         }
     </div>
 }
@@ -27,17 +42,17 @@
 
 <style>
     #name {
-        color: white;
+        color: darkred;
     }
     #name:hover {
-        color: blue;
+        color: gold;
     }
     #photoBorder {
-        margin-top: 9px;
+        margin-top: 0px;
         margin-left: 0px;
     }
 
         #photoBorder:hover {
-           
+           color:gold;
         }
 </style>

@@ -16,6 +16,7 @@
     public class HomeController : Controller
     {
         #region Fields:       
+        private static string FooterText { get; set; }
         private static bool isOrder = false;
         private Guid AccessToken { get; set; }
         private readonly ServiceAfricanShop db;
@@ -37,10 +38,12 @@
             db = new ServiceAfricanShop(Init.ConnectionStr);
             try
             {
+                {
+                    //FooterText = 
+                }
                 StaticTables.Categories = db.ReadCategories();
                 StaticTables.Carts = db.ReadCarts().ToList();
                 if (VideoPath == null)
-
                     VideoPath = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory + "Videos", "*");
             }
             catch { }
@@ -81,7 +84,7 @@
         #endregion
 
         [HttpGet]
-        public async Task<ActionResult> MainPage(int? page, string param, string isShopCart)
+        public async Task<ActionResult> MainPage(int? page, string param = "AllCategoryPart", string isShopCart = "")
         {
             var list = new List<string[]>();
             VideoPath = VideoPath == null ? new List<string>().ToArray() : VideoPath;
@@ -90,6 +93,10 @@
                 ViewBag.Videos = FillVideoNames(VideoPath, list);
             }
             catch { }
+
+            // If we selected page pagination - reset on default categories view:
+            if(page != null)
+            param = null;
 
             // If have an order or clicked Cart btn:
             if (isShopCart == "cart")
@@ -140,11 +147,11 @@
                 await CurrentOrDefaultUser(CurrentLocalUser);
                 var selectedProd = StaticTables.Products.FirstOrDefault(c => c.Code == button);
                 StaticTables.Carts = StaticTables.Carts.Where(u => u.UserId == CurrentLocalUser.UserId).ToList();
-                await CurrentOrDefaultUser(CurrentLocalUser);
+                // CurrentOrDefaultUser(CurrentLocalUser);
                 PlaceOrder(selectedProd, CurrentLocalUser.UserId, db);
                 { ViewBag.Cart = StaticTables.Carts; }
             }
-            else if (button != null)     // If We pressed any Category button
+            else if (button != null)      // If We pressed any Category button
             {
                 isCategoryPressed = true;
                 isTopMenu = false;
@@ -201,7 +208,7 @@
         }
 
         [HttpPost]
-        public ActionResult SendMessage(BLL.DTO.EmailEntity.EmailData mailInfo)
+        public async Task<ActionResult> SendMessage(BLL.DTO.EmailEntity.EmailData mailInfo)
         {
             isModal = true;
             mailInfo.SendingDate = DateTime.UtcNow;
@@ -229,10 +236,37 @@
                 TotalSum = 0;
                 var arr = MakeOrderFile(mailInfo.UserName, mailInfo.Phone, mailInfo.Email);
                 var carts = StaticTables.Carts.Where(u => u.UserId == CurrentLocalUser.UserId).ToList();
+                var productsStr = string.Empty;
+                foreach (var pr in carts)
+                    productsStr += pr.ProductName + ", ";
                 var htmlB = CreateOrderBody(carts, mailInfo);
-                modalMsg = new EmailSender(mailInfo, htmlB).SendMessage(MessageType.NewOrder, arr[0]);
+                db.Insert(new OrderDto
+                {
+                    OrderDate = DateTime.Now,
+                    TotalAmount = carts.Sum(t => t.ItemsPrice),
+                    UserId = CurrentLocalUser.UserId,
+                    Products = productsStr
+                }); ;
+                modalMsg = new EmailSender(mailInfo, htmlB)
+                    .SendMessage(MessageType.NewOrder, arr[0]);
                 return RedirectToAction("../Home/MainPage");
-            }   
+            }
+            // Else someone clicked on Call Back or Write Us button:
+            // if user still doesn't exist
+            if (CurrentLocalUser == null)
+            {
+                await CurrentOrDefaultUser(CurrentLocalUser);
+            }
+            db.Insert(new MessageDto 
+            { 
+                TypeMessage = "Write Us",
+                TextMessage = mailInfo.Comment,
+                DateMessage = DateTime.Now,
+                IsReviwed = false, 
+                RecipientId = 1,
+                SenderId = CurrentLocalUser.UserId,
+                Title = "'Write Us' from africanshoplviv.com"
+            });
             modalMsg = new EmailSender(mailInfo).SendMessage(MessageType.WriteUs);
             return RedirectToAction("../Home/MainPage");
         }
@@ -437,7 +471,7 @@
     "<link href = \"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\">" +
 "</head>" +
 "<body>" +
-    $"<h3 style = \"text-align:center;color:blue\" > Order № 1 {DateTime.Now}</h3>" +
+    $"<h3 style = \"text-align:center;color:blue\" > Order № {carts.Count} {DateTime.Now}</h3>" +
     "<h5>Hello, Marko Okoye!</h5>" +
     "<h5>" +
         "Incoming order on the site&nbsp;&nbsp;<a href = \"http://www.africanshopukraine.com\">" +
